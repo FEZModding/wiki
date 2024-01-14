@@ -1,0 +1,135 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 1280px) {
+    .sidebar-wrap, .addons-wrap {
+        left: calc(50vw - 640px);
+    }
+}
+
+.navigation-bottom{
+    display:none !important;
+}
+
+.content{
+    min-height: 100vh;
+}
+
+h1, h2, h3{
+    border-width: 0px !important;
+}
+
+.copyright{
+    text-align: left !important;
+}
+
+.title a, .title a:hover{
+    color:transparent;
+    background: url("/assets//images/logo.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display:block;
+    width:250px;
+    height:60px;
+    margin:auto;
+}
+
+.search input{
+    background: #140e1f;
+    color:#e5deee;
+    border-color: #473768;
+    font-size:1em;
+    padding: 0.4em 1em;
+}
+
+.search input::placeholder{
+    color: #ae9cc988;
+}
+
+body {
+    background-color: #201b29 !important;
+}
+
+.header{
+    background-color: #473768 !important;
+}
+
+.content{
+    background-color: #2c253a !important;
+    color: #e5deee;
+}
+
+.sidebar{
+    background-color: #272232 !important;
+}
+
+a, .content .markdown-body a{
+    color: #a883ff;
+}
+
+h1, h2, h3, .content>hr{
+    color: white;
+    border-bottom-color: #4c435e !important;
+}
+
+.breadcrumb-item-selected,
+.breadcrumb-item[aria-current]:not([aria-current="false"]){
+    color: #ae9cc9;
+}
+
+.markdown-body code{
+    background-color: #2d273a;
+    border-color: #4c435e;
+    color: white;
+}
+
+.copyright{
+    color: #ae9cc9 !important;
+}
+
+
+.copyright a{
+    color: #a883ff !important;
+}
+
+.toc.current{
+    background: transparent !important;
+}
+
+.toc.current a{
+    background: transparent !important;
+    color:white !important;
+}
+
+.content-toc{
+    background: transparent !important;
+}
+
+.content-toc ul{
+    background: transparent !important;
+}
+
+.toc a.current{
+    background: #ae9cc922 !important;
+    border-width: 0px !important;
+}
+
+.toc.level-1.current{
+    background: #ae9cc922 !important;
+}
+
+.toc.level-1.current>a {
+    background: #ae9cc922 !important;
+    border: 0px solid #272232;
+    border-bottom-width: 2px;
+}
+
+.caption{
+    color: #a883ff !important;
+    background: #a883ff11;
+}
