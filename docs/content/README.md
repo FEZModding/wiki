@@ -1,3 +1,3 @@
-# Assets Specification
+# Content Specification
 
 {% include list.liquid %}
