@@ -147,7 +147,7 @@ h1, h2, h3, .content>hr{
 }
 
 .toc.current > ul {
-  background: transparent;
+  background: transparent !important;
 }
 
 .markdown-body table tr {
@@ -184,11 +184,23 @@ h1, h2, h3, .content>hr{
 
 .toasts{
   box-shadow: none;
-  border: 1px solid #4c435e;
+  border: 1px solid;
 }
 
-.toasts .title{
+.toasts.note, .toasts.tip{
+    border-color: #4c435e;
+}
+
+.toasts.note .title, .toasts.tip .title{
   background: #4c435e;
+}
+
+.toasts.danger, .toasts.warning{
+    border-color: #734;
+}
+
+.toasts.note .danger, .toasts.warning .title{
+  background: #734;
 }
 
 /* blink anchored element */
