@@ -87,7 +87,7 @@ h1, h2, h3{
     border: 1px solid;
 }
 
-/* blink anchored element */
+// blink anchored element
 :target {
     animation-name: blink;
     animation-direction: normal;
@@ -104,65 +104,71 @@ h1, h2, h3{
     100% { background-color: transparent; }
 }
 
-// change colors of the entire site
-body {
-    background-color: #201b29 !important;
-}
 
-.header{
-    background-color: #473768 !important;
-}
+
+
+
+// color tweaking
+
+$link-color: #a883ff;
+$background-dark: #201b29;
+$background-sidebar: #272232;
+$background-mid: #2c253a;
+$background-light: #473768;
+
+$light-grayish: #ae9cc9;
+$dark-grayish: #4c435e;
+
+$text-highlight: #fd04;
+$warning-color: #734;
+
+body.container { background: $background-dark; }
+.header { background: $background-light; }
+.sidebar { background: $background-sidebar; }
 
 .content{
-    background-color: #2c253a !important;
+    background: $background-mid;
     color: #e5deee;
 }
 
-.sidebar{
-    background-color: #272232 !important;
-}
-
-a, .content .markdown-body a{
-    color: #a883ff;
-}
+a { color: $link-color }
 
 h1, h2, h3, .content>hr{
     color: white;
-    border-bottom-color: #4c435e !important;
+    border-bottom-color: $dark-grayish !important;
 }
 
 .breadcrumb-item-selected,
 .breadcrumb-item[aria-current]:not([aria-current="false"]){
-    color: #ae9cc9;
+    color: $light-grayish;
 }
 
-.markdown-body code{
-    background-color: #2d273a;
-    border-color: #4c435e;
-    color: white;
+.copyright.text-gray{
+    color: $light-grayish !important;
+    a { color: $link-color !important; }
 }
 
-.copyright{
-    color: #ae9cc9 !important;
-    a { color: #a883ff !important; }
-}
+.toctree{
+    .caption {
+        color: $link-color !important;
+        background: #a883ff11;
+    }
 
-.toc{
-    &.current a {
+    .toc.current a {
         color: white !important;
     }
 
     .content-toc,
     .content-toc ul,
-    &.current>ul,
-    &.current a,
-    &.current {
+    .toc.current>ul,
+    .toc.current a,
+    .toc.current {
         background: transparent !important;
     }
 
     a.current,
-    &.level-1.current,
-    &.level-1.current>a {
+    .toc.level-1.current,
+    .toc.level-1.current>a {
         background: #ae9cc922 !important;
     }
 
@@ -170,30 +176,34 @@ h1, h2, h3, .content>hr{
         border-width: 0px !important;
     }
 
-    &.level-1.current>a {
+    .toc.level-1.current>a {
         border-bottom: 2px solid #272232;
     }
 }
 
 
+.markdown-body {
+    table{
+        tr { background-color: #0008; }
+        tbody tr:nth-child(odd) { background-color: #0004; }
+        tbody tr:nth-child(even) { background-color: #0008; }
+        th, td { border-color: $dark-grayish; }
+    }
 
-.caption{
-    color: #a883ff !important;
-    background: #a883ff11;
+    code {
+        background-color: #0004;
+        border-color: $dark-grayish;
+        color: white;
+    }
+
+    a { color: $link-color }
 }
 
-.markdown-body table{
-    tr { background-color: #0008; }
-    tbody tr:nth-child(odd) { background-color: #0004; }
-    tbody tr:nth-child(even) { background-color: #0008; }
-    th, td { border-color: #484158; }
-}
+.text-gray { color: #ae9cc9; }
 
-.text-gray { color: #586069 !important; }
+.bg-yellow { background-color: $text-highlight !important; }
 
-.bg-yellow { background-color: #fd04 !important; }
-
-.border-top { border-bottom-color: #4c435e !important; }
+.border-top { border-bottom-color: $dark-grayish !important; }
 
 
 @mixin toast-color($color){
@@ -202,7 +212,7 @@ h1, h2, h3, .content>hr{
 }
 
 .toasts{
-    .note, .tip { @include toast-color(#4c435e); }
-    .warning, .danger { @include toast-color(#734); }
+    &.note, &.tip { @include toast-color($dark-grayish); }
+    &.warning, &.danger { @include toast-color($warning-color); }
 }
 
