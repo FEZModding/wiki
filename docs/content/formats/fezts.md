@@ -18,6 +18,7 @@ Top-level object stored in `.fezts.json` JSON file.
 |Triles|[Trile](#trile)|Definitions of each individual trile.|
 
 ### Trile
+
 |Property name|Type|Description|
 |-|-|-|
 |Name|String|Internal name for the trile.|
