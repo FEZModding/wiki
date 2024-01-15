@@ -216,3 +216,9 @@ h1, h2, h3, .content>hr{
     &.warning, &.danger { @include toast-color($warning-color); }
 }
 
+.markdown-body div.highlighter-rouge {
+    // TODO: should probably format it all properly
+    // but for now this'll do
+    filter: invert(1);
+}
+
