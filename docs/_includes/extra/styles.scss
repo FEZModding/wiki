@@ -1,15 +1,14 @@
 
-.container{
-    display: flex;
-    justify-content: center;
-}
-
 @media (min-width: 1280px) {
     .sidebar-wrap, .addons-wrap {
         left: calc(50vw - 640px);
     }
     .content-wrap {
         width: 980px;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
     }
 }
 
