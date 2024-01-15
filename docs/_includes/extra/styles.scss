@@ -212,7 +212,8 @@ h1, h2, h3, .content>hr{
 }
 
 .toasts{
-    &.note, &.tip { @include toast-color($dark-grayish); }
+    &.note { @include toast-color($dark-grayish); }
+    &.tip { @include toast-color($background-light); }
     &.warning, &.danger { @include toast-color($warning-color); }
 }
 
