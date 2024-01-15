@@ -5,7 +5,7 @@
 `.fezts.json` files contain trile set data stored in a JSON format. This documentation presents a structure and purpose to each property in this file format. Descriptions are incomplete in some cases, and they might be incorrect due to lack of proper testing in the game itself, but that'll improve over time.
 
 ## Format differences
-Unsure. Ask the FEZRepacker team!
+TODO
 
 ## Property definitions
 
@@ -27,12 +27,12 @@ Top-level object stored in `.fezts.json` JSON file.
 |Offset|[Vector3](#vector3)|In-game offset position from trile emplacement.|
 |Immaterial|Boolean|If true, Gomez can pass through this block. Usually used for decorative triles.|
 |SeeThrough|Boolean|If true, the camera can render whatever is behind the trile through its transparent spots.|
-|Thin|Boolean|If true, the trile is thin. Not sure what this means.|
+|Thin|Boolean|If true, the trile is thin. TODO.|
 |ForceHugging|Boolean|If true, the trile will "hug" (snap to) the nearest trile.|
 |Faces|[FaceRender](#facerender)|How the Trixel engine should render certain faces of the trile.|
 |Type|String|What Gomez can modify about this trile (bounce on it like a mushroom, unlock it like a door...).|
 |Face|[FaceOrientation](#faceorientation)|Initial facing direction for the trile.|
-|SurfaceType|String|What type of surface the trile is. Not sure what this means.|
+|SurfaceType|String|What type of surface the trile is. TODO.|
 |AtlasOffset|[Vector2](#vector2)|X and Y offsets for the image, describing where the trile's six-faced texture begins.|
 
 ### Vector3
