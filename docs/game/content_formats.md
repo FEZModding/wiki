@@ -17,12 +17,14 @@ FEZ stores its assets in four package files that are buffered into a memory on g
 ### PAK package format
 
 The file starts with a small header, containing an integer indicating a number of files in this archive, followed by an array of files.
+
 |Field Type|Description|
 |-|-|
 |`uint`|File count defining the size of following array.|
 |File Array|Array of variable-sized files, placed one after another.|
 
 Every file in the array is represented as follows:
+
 |Field Type|Description|
 |-|-|
 |`string`|Path and name of the file without its extension.|
@@ -68,6 +70,7 @@ Flag bits can contain following flags:
 If compression flag is set, the rest of the file is compressed and prefixed with `uint` representing the size of this data after decompression. In case of FEZ, slightly modified LZX algorithm is used for compression. For details, visit [XNB reader code from open source implementation of MonoGame](https://github.com/labnation/MonoGame/blob/d270be3e800a3955886e817cdd06133743a7e043/MonoGame.Framework/Content/ContentManager.cs#L405).
 
 Uncompressed data (or non-compressed file content after header) should look like this:
+
 |Field Type|Description|
 |-|-|
 |`7BitEncodedInt`|Type reader count, defining the number of elements in following array.|
@@ -77,6 +80,7 @@ Uncompressed data (or non-compressed file content after header) should look like
 |Object Array| Shared resources array. In FEZ, none of the original XNB files contain additional resources.
 
 Each `Type Reader Info Array` entry stores information about the `ContentTypeReader<T>` subclass that was used to read the informations within this file:
+
 |Field Type|Description|
 |-|-|
 |`string`|Type reader name - .NET assembly qualified name of a subclass.|
@@ -86,6 +90,7 @@ In original XNB files, type reader name includes assembly name specification (wh
 However, sometimes it is necessary to include it, especially for readers and types in FezEngine namespace. For instance, the way it's done in FEZ Repacker is by including simplified assembly name specification to every data structure that can be stored in XNB files.
 
 Each Object is a reference to a type reader, followed by a raw data, like so:
+
 |Field Type|Description|
 |-|-|
 |`7BitEncodedInt`|Object type. If non-zero, then `(type - 1)`th entry of Type Reader Info Array is used.|
