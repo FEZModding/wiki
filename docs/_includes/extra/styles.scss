@@ -1,4 +1,10 @@
+/*
+* Overriding the default style of jekyll-rtd-theme
+* to give it a more cozy looks
+*/
 
+
+// move content to the middle of the page
 @media (min-width: 1280px) {
     .sidebar-wrap, .addons-wrap {
         left: calc(50vw - 640px) !important;
@@ -12,32 +18,38 @@
     }
 }
 
-/* always shows the nav scroll bar */
+// always show the scroll-bar in the sidebar
 @media (min-width: 768px) {
     .sidebar-wrap .sidebar {
         width: initial;
     }
-    .sidebar-wrap .sidebar .header, .sidebar-wrap .sidebar .toctree {
+    .sidebar-wrap .sidebar .header, 
+    .sidebar-wrap .sidebar .toctree {
         width: initial;
     }
 }
 
+// hide navigation buttons - they're dumb
 .navigation-bottom{
     display:none !important;
 }
 
+// ensure content fills up the whole page
 .content-wrap>.content{
     min-height: 100vh;
 }
 
+// remove separator lines from headers
 h1, h2, h3{
     border-width: 0px !important;
 }
 
+// move copyright info to the left instead of middle
 .copyright{
     text-align: left !important;
 }
 
+// custom site logo
 .title a, .title a:hover{
     color:transparent;
     background: url("/wiki/assets/images/logo.png");
@@ -51,18 +63,48 @@ h1, h2, h3{
     margin:auto;
 }
 
+// better-looking search bar
 .search input{
     background: #140e1f;
     color:#e5deee;
     border-color: #473768;
     font-size:1em;
     padding: 0.4em 1em;
+
+    &::placeholder{
+        color: #ae9cc988;
+    }
 }
 
-.search input::placeholder{
-    color: #ae9cc988;
+// resize tables to fit the screen
+.markdown-body table {
+    width: 100% !important;
 }
 
+// make toasts flat
+.toasts {
+    box-shadow: none;
+    border: 1px solid;
+}
+
+/* blink anchored element */
+:target {
+    animation-name: blink;
+    animation-direction: normal;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@keyframes blink {
+    0% { outline: 5px solid highlight; }
+    100% { outline: 0px solid transparent; }
+}
+@keyframes blink2 {
+    0% { background-color: yellow; }
+    100% { background-color: transparent; }
+}
+
+// change colors of the entire site
 body {
     background-color: #201b29 !important;
 }
@@ -102,121 +144,65 @@ h1, h2, h3, .content>hr{
 
 .copyright{
     color: #ae9cc9 !important;
+    a { color: #a883ff !important; }
+}
+
+.toc{
+    &.current a {
+        color: white !important;
+    }
+
+    .content-toc,
+    .content-toc ul,
+    &.current>ul,
+    &.current a,
+    &.current {
+        background: transparent !important;
+    }
+
+    a.current,
+    &.level-1.current,
+    &.level-1.current>a {
+        background: #ae9cc922 !important;
+    }
+
+    a.current {
+        border-width: 0px !important;
+    }
+
+    &.level-1.current>a {
+        border-bottom: 2px solid #272232;
+    }
 }
 
 
-.copyright a{
-    color: #a883ff !important;
-}
-
-.toc.current{
-    background: transparent !important;
-}
-
-.toc.current a{
-    background: transparent !important;
-    color:white !important;
-}
-
-.content-toc{
-    background: transparent !important;
-}
-
-.content-toc ul{
-    background: transparent !important;
-}
-
-.toc a.current{
-    background: #ae9cc922 !important;
-    border-width: 0px !important;
-}
-
-.toc.level-1.current{
-    background: #ae9cc922 !important;
-}
-
-.toc.level-1.current>a {
-    background: #ae9cc922 !important;
-    border: 0px solid #272232;
-    border-bottom-width: 2px;
-}
 
 .caption{
     color: #a883ff !important;
     background: #a883ff11;
 }
 
-.toc.current > ul {
-  background: transparent !important;
+.markdown-body table{
+    tr { background-color: #0008; }
+    tbody tr:nth-child(odd) { background-color: #0004; }
+    tbody tr:nth-child(even) { background-color: #0008; }
+    th, td { border-color: #484158; }
 }
 
-.markdown-body table tr {
-  background-color: #0008;
-}
+.text-gray { color: #586069 !important; }
 
-.markdown-body table tbody tr:nth-child(odd) {
-  background-color: #0004;
-}
+.bg-yellow { background-color: #fd04 !important; }
 
-.markdown-body table tbody tr:nth-child(even) {
-  background-color: #0008;
-}
+.border-top { border-bottom-color: #4c435e !important; }
 
-.markdown-body table th, .markdown-body table td{
-  border-color: #484158;
-}
 
-.markdown-body table {
-    width: 100% !important;
-}
-
-.text-gray {
-  color: #586069 !important;
-}
-
-.bg-yellow {
-  background-color: #fd04 !important
-}
-
-.border-top {
-  border-bottom-color: #4c435e !important;
+@mixin toast-color($color){
+    border-color: $color;
+    .title { background: $color; }
 }
 
 .toasts{
-  box-shadow: none;
-  border: 1px solid;
-}
-
-.toasts.note, .toasts.tip{
-    border-color: #4c435e;
-}
-
-.toasts.note .title, .toasts.tip .title{
-  background: #4c435e;
-}
-
-.toasts.danger, .toasts.warning{
-    border-color: #734;
-}
-
-.toasts.note .danger, .toasts.warning .title{
-  background: #734;
-}
-
-/* blink anchored element */
-:target {
-    animation-name: blink;
-    animation-direction: normal;
-    animation-duration: 5s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-}
-@keyframes blink {
-    0% { outline: 5px solid highlight; }
-    100% { outline: 0px solid transparent; }
-}
-@keyframes blink2 {
-    0% { background-color: yellow; }
-    100% { background-color: transparent; }
+    .note, .tip { @include toast-color(#4c435e); }
+    .warning, .danger { @include toast-color(#734); }
 }
 
