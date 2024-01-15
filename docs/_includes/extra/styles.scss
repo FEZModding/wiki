@@ -186,7 +186,7 @@ h1, h2, h3, .content>hr{
     table{
         tr { background-color: #0008; }
         tbody tr:nth-child(odd) { background-color: #0004; }
-        tbody tr:nth-child(even) { background-color: #0008; }
+        tbody tr:nth-child(even) { background-color: #0006; }
         th, td { border-color: $dark-grayish; }
     }
 
