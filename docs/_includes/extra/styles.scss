@@ -169,7 +169,7 @@ h1, h2, h3, .content>hr{
     a.current,
     .toc.level-1.current,
     .toc.level-1.current>a {
-        background: #ae9cc922 !important;
+        background: rgba($light-grayish, 0.1) !important;
     }
 
     a.current {
@@ -177,7 +177,7 @@ h1, h2, h3, .content>hr{
     }
 
     .toc.level-1.current>a {
-        border-bottom: 2px solid #272232;
+        border-bottom: 2px solid $background-sidebar;
     }
 }
 
@@ -199,7 +199,7 @@ h1, h2, h3, .content>hr{
     a { color: $link-color }
 }
 
-.text-gray { color: #ae9cc9; }
+.text-gray { color: $light-grayish !important; }
 
 .bg-yellow { background-color: $text-highlight !important; }
 
