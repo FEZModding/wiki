@@ -146,3 +146,21 @@ h1, h2, h3, .content>hr{
 .markdown-body table {
     width: 100% !important;
 }
+
+/* blink anchored element */
+:target {
+    animation-name: blink;
+    animation-direction: normal;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@keyframes blink {
+    0% { outline: 5px solid highlight; }
+    100% { outline: 0px solid transparent; }
+}
+@keyframes blink2 {
+    0% { background-color: yellow; }
+    100% { background-color: transparent; }
+}
+
