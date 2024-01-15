@@ -1,7 +1,7 @@
 
 @media (min-width: 1280px) {
     .sidebar-wrap, .addons-wrap {
-        left: calc(50vw - 640px);
+        left: calc(50vw - 640px) !important;
     }
     .content-wrap {
         width: 980px;
