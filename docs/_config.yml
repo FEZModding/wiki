@@ -4,6 +4,8 @@ description: Collection of resources for FEZ modding.
 readme_index:
   with_frontmatter: true
 
+permalink: /:categories/:title
+
 remote_theme: rundocs/jekyll-rtd-theme
 
 toc: true
