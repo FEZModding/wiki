@@ -54,7 +54,7 @@ Structure defining how the Trixel engine should render specified faces of a tril
 
 ### RenderOption
 
-[Enum](#enum) specifiying **"None"**, **"AllSides"**, or **"TopOnly"**. Not sure what these mean.
+[Enum](#enum) specifiying **"None"**, **"AllSides"**, or **"TopOnly"**. TODO.
 
 ### Vector2
 
