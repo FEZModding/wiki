@@ -12,6 +12,16 @@
     }
 }
 
+/* always shows the nav scroll bar */
+@media (min-width: 768px) {
+    .sidebar-wrap .sidebar {
+        width: initial;
+    }
+    .sidebar-wrap .sidebar .header, .sidebar-wrap .sidebar .toctree {
+        width: initial;
+    }
+}
+
 .navigation-bottom{
     display:none !important;
 }
