@@ -26,14 +26,8 @@
     display:none !important;
 }
 
-.content{
+.content-wrap>.content{
     min-height: 100vh;
-}
-
-/* for the note, warning, danger, and tip boxes */
-.toasts>.content {
-    min-height: unset;/* supposedly firefox doesn't support `auto` */
-    min-height: auto;
 }
 
 h1, h2, h3{
@@ -152,8 +146,49 @@ h1, h2, h3, .content>hr{
     background: #a883ff11;
 }
 
+.toc.current > ul {
+  background: transparent;
+}
+
+.markdown-body table tr {
+  background-color: #0008;
+}
+
+.markdown-body table tbody tr:nth-child(odd) {
+  background-color: #0004;
+}
+
+.markdown-body table tbody tr:nth-child(even) {
+  background-color: #0008;
+}
+
+.markdown-body table th, .markdown-body table td{
+  border-color: #484158;
+}
+
 .markdown-body table {
     width: 100% !important;
+}
+
+.text-gray {
+  color: #586069 !important;
+}
+
+.bg-yellow {
+  background-color: #fd04 !important
+}
+
+.border-top {
+  border-bottom-color: #4c435e !important;
+}
+
+.toasts{
+  box-shadow: none;
+  border: 1px solid #4c435e;
+}
+
+.toasts .title{
+  background: #4c435e;
 }
 
 /* blink anchored element */
