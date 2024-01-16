@@ -1,10 +1,10 @@
 # Scripting Reference
 
-##
+## Type Descriptors
 
-\[Events\](#Events) are ScriptTriggers
-\[Properties\](#Properties) are for ScriptConditions (operators not included)
-\[Operations\](#Operations) are ScriptActions
+[Events](#Events) are ScriptTriggers
+[Properties](#Properties) are for ScriptConditions (operators not included)
+[Operations](#Operations) are ScriptActions
 
 ### Events
 
