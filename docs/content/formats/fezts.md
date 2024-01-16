@@ -32,7 +32,7 @@ Top-level object stored in `.fezts.json` JSON file.
 |Faces|[FaceRender](#facerender)|How the Trixel engine should render certain faces of the trile.|
 |Type|String|What Gomez can modify about this trile (bounce on it like a mushroom, unlock it like a door...).|
 |Face|[FaceOrientation](#faceorientation)|Initial facing direction for the trile.|
-|SurfaceType|String|What type of surface the trile is. TODO.|
+|SurfaceType|String|Determines the footsteps sound effect to play when the player lands on this trile. Must be either **Grass**, **Metal**, **Stone**, or **Wood**.|
 |AtlasOffset|[Vector2](#vector2)|X and Y offsets for the image, describing where the trile's six-faced texture begins.|
 
 ### Vector3
@@ -54,7 +54,7 @@ Structure defining how the Trixel engine should render specified faces of a tril
 
 ### RenderOption
 
-[Enum](#enum) specifiying **"None"**, **"AllSides"**, or **"TopOnly"**. TODO.
+[Enum](#enum) specifiying **"None"**, **"AllSides"**, **"Immaterial"**, **"TopOnly"**, or **"TopNoStraightLedge"**. TODO.
 
 ### Vector2
 

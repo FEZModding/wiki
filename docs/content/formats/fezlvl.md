@@ -35,13 +35,13 @@ Top-level object stored in `.fezlvl.json` JSON file.
 |SkipPostProcess|Boolean|If true, level is rendered without post-processing effects.|
 |GomezHaloName|String|A name of a background plane texture used for halo effect around Gomez.|
 |HaloFiltering|Boolean|Behaviour currently unknown.|
-|BlinkingAlpha|Boolean|Behaviour currently unknown.|
+|BlinkingAlpha|Boolean|If true, the CMYK theme is used, and the world blinks to the music. See also: [TrileInstanceActorSettings](#trileinstanceactorsettings)|
 |WaterHeight|Float|Height of water in this level.|
 |WaterType|[LiquidType](#liquidtype)|Type of liquid to use for water in this level.|
 |SongName|String|Name of the song to play.|
 |MutedLoops|String[]|List of names of loops to mute in played song.|
 |AmbienceTracks|[AmbienceTrack](#ambiencetrack)|List of ambience tracks to play.|
-|SequenceSamplesPath|string|Behaviour currently unknown.|
+|SequenceSamplesPath|string|The subdirectory in the "Sounds" folder to look for the sound effects to play for the blinking blocks.|
 |LowPass|Boolean|If true, music is put through low pass filter.|
 |FAPFadeOutStart|Integer|Far Away Place fade out start. Unused.|
 |FAPFadeOutLength|Integer|Far Away Place fade out length. Unused.|
@@ -122,12 +122,12 @@ Structure containing additional information of a trile instance.
 
 |Property name|Type|Description|
 |-|-|-|
-|ContainedTrile|int|Behaviour currently unknown. Can be null.|
+|ContainedTrile|int|Unused?|
 |SignText|String|Language identifier of a text which appears when interacting with this trile.|
-|Sequence|String|Behaviour currently unknown. Presumably related to blinking blocks.|
+|Sequence|String|Behaviour currently unknown. Related to blinking blocks.|
 |SequenceSampleName|String|Behaviour currently unknown. Same as above.|
 |SequenceAlternateSampleName|String|Behaviour currently unknown. Same as above.|
-|HostVolume|Integer|ID of host [Volume](#volume). Purpose unknown.|
+|HostVolume|Integer|ID of host [Volume](#volume) into which this moveable crate will be accepted. As seen in the level ZU_4_SIDE.|
 
 ### TrileGroup
 
@@ -223,9 +223,9 @@ Structure defining settings for a volume instance.
 |-|-|-|
 |DotDialogue|[DotDialogueLine](#dotdialogueline)[]|List of Dot dialogues used by this volume.|
 |CodePattern|[CodeInput](#codeinput)[]|Input combo used by this volume.|
-|IsBlackHole|Boolean|Exact behaviour currently unknown.|
+|IsBlackHole|Boolean|If true, this volume is a black hole.|
 |NeedsTrigger|Boolean|Behaviour currently unknown.|
-|IsSecretPassage|Boolean|Behaviour currently unknown.|
+|IsSecretPassage|Boolean|This is used for the secret shortcut doors. Exact behaviour currently unknown.|
 |WaterLocked|Boolean|Behaviour currently unknown.|
 |IsPointOfInterest|Boolean|Behaviour currently unknown.|
 |FarawayPlaneOffset|[Vector2](#vector2)|Behaviour currently unknown.|
@@ -352,15 +352,15 @@ Structure defining settings for art object instance.
 |SpinEvery|Float|Behaviour currently unknown.|
 |SpinOffset|Float|Behaviour currently unknown.|
 |OffCenter|Boolean|Behaviour currently unknown.|
-|VibrationPattern|[VibrationMotor](#vibrationmotor)[]|Behaviour currently unknown.|
-|CodePattern|[CodeInput](#codeinput)[]|Behaviour currently unknown.|
+|VibrationPattern|[VibrationMotor](#vibrationmotor)[]|The vibration sequence to use for the tuning forks.|
+|CodePattern|[CodeInput](#codeinput)[]|Unused?|
 |Segment|[PathSegment](#pathsegment)|Behaviour currently unknown.|
 |NextNode|Integer|Behaviour currently unknown. Can be null.|
-|DestinationLevel|String|Behaviour currently unknown.|
-|TreasureMapName|String|Behaviour currently unknown.|
+|DestinationLevel|String|The name of the hub level this small warp panel will take the player. Note the target level must have a big warp gate.|
+|TreasureMapName|String|The name of the treasure map this treasure contains.|
 |InvisibleSides|[FaceOrientation](#faceorientation)[]|Behaviour currently unknown.|
 |TimeswitchWindBackSpeed|Float|Behaviour currently unknown.|
-|ContainedTrile|[ActorType](#actortype)|Behaviour currently unknown.|
+|ContainedTrile|[ActorType](#actortype)|The ActorType to spawn when opening this treasure. Can be null.|
 
 ### VibrationMotor
 
@@ -418,7 +418,7 @@ Structure defining an instance of a non-playable character in the level.
 |WalkSpeed|Float|Behaviour currently unknown.|
 |RandomizeSpeech|Boolean|Behaviour currently unknown.|
 |SayFirstSpeechLineOnce|Boolean|Behaviour currently unknown.|
-|AvoidsGomez|Boolean|Behaviour currently unknown.|
+|AvoidsGomez|Boolean|If true, this NPC will attempt to flee from Gomez.|
 |ActorType|[ActorType](#actortype)|Behaviour currently unknown.|
 |Speech|[SpeechLine](#speechline)[]|Behaviour currently unknown.|
 |Actions|[NpcAction Dictionary](#npcaction-dictionary)|Behaviour currently unknown.|
