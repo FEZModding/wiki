@@ -88,6 +88,10 @@
 
 ### Operations
 
+```note
+If an operation has less than the required amount of parameters, the remaining parameters will be set to the default value for that type. (i.e., Strings will be empty strings, numbers will be 0, bool will be false, etc.)
+```
+
 | EntityIdentifier | ActionName | Parameters | RestrictedToActorTypes | Description |
 |---|
 | ArtObjects\[id\] | SetRotation | float x, float y, float z |   | Replaces the rotation angles (in degrees) |
