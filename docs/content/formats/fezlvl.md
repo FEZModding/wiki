@@ -379,7 +379,7 @@ Structure defining background plane, its location and properties.
 |Position|[Vector3](#vector3)|Position of a background plane.|
 |Rotation|[Quaternion](#quaternion)|Rotation of a background plane.|
 |Scale|[Vector3](#vector3)|Scale of a background plane.|
-|Size|[Vector3](#vector3)|Behaviour currently unknown.|
+|Size|[Vector3](#vector3)|Width, height, and depth of plane.|
 |TextureName|String|Name of a texture used by this background plane.|
 |LightMap|Boolean|Behaviour currently unknown.|
 |AllowOverbrightness|Boolean|Behaviour currently unknown.|
