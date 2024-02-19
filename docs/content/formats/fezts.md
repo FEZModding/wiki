@@ -38,37 +38,40 @@ Top-level object stored in `.fezts.json` JSON file.
 |SeeThrough|Boolean|If true, the camera can render whatever is behind the trile through its transparent spots.|
 |Thin|Boolean|If true, the trile is thin. TODO.|
 |ForceHugging|Boolean|If true, the trile will "hug" (snap to) the nearest trile.|
-|Faces|[FaceRender](#facerender)|How the Trixel engine should render certain faces of the trile.|
-|Type|String|What Gomez can modify about this trile (bounce on it like a mushroom, unlock it like a door...).|
+|Faces|[CollisionType Dictionary](#collisiontype-dictionary)|Defines how Gomez should interfact with each face of a trile.|
+|Type|[ActorType](#actortype)|Defines a type of the trile, which can give it special properties (mushroom bounce, door unlocking, bomb, etc.).|
 |Face|[FaceOrientation](#faceorientation)|Initial facing direction for the trile.|
-|SurfaceType|String|Determines the footsteps sound effect to play when the player lands on this trile. Must be either **Grass**, **Metal**, **Stone**, or **Wood**.|
+|SurfaceType|[SurfaceType](#surfacetype)|Determines the footsteps sound effect to play when the player lands on this trile.|
 |AtlasOffset|[Vector2](#vector2)|X and Y offsets for the image, describing where the trile's six-faced texture begins.|
 
 ### Vector3
 
 Geometry structure containing X, Y and Z coordinates. It's stored as an array of three floating point numbers, simirarly to how GeoJSON does it.
 
-### FaceRender
+### CollisionType Dictionary
 
-Structure defining how the Trixel engine should render specified faces of a trile(?)
-
-|Property name|Type|Description|
-|-|-|-|
-|Face|[FaceOrientation](#faceorientation)|Which face to customize rendering for.|
-|Render Option|[RenderOption](#renderoption)|How that rendering should be customized.|
-
-### FaceOrientation
-
-[Enum](#enum) specifying one of six possible trile face orientations - **Left**, **Down**, **Back**, **Right**, **Top** or **Front**.
-
-### RenderOption
-
-[Enum](#enum) specifiying **"None"**, **"AllSides"**, **"Immaterial"**, **"TopOnly"**, or **"TopNoStraightLedge"**. TODO.
-
-### Vector2
-
-Geometry structure containing X and Y coordinates. It's stored as an array of two floating point numbers, simirarly to how GeoJSON does it.
+A Dictionary of [CollisionType](#collisiontype)s, linked to a [FaceOrientation](#faceorientation), defining how Gomez should collide with this trile when facing each direction (it's possible to create triles that can be collided with only from certain perspective orientations, like `arch` invisible platforms).
 
 ### Enum
 
 All enums are stored as PascalCamelCase string parameters.
+
+### FaceOrientation
+
+[Enum](#enum) specifying one of six possible trile face orientations - **Left**, **Down**, **Back**, **Right**, **Top** or **Front**. In [CollisionType Dictionary](#collisiontype-dictionary), **Top** and **Down** are not used.
+
+### CollisionType
+
+[Enum](#enum) specifiying a type of a collision for a trile. Must be one of  **"None"**, **"AllSides"**, **"Immaterial"**, **"TopOnly"**, or **"TopNoStraightLedge"**.
+
+### ActorType
+
+[Enum](#enum) specifying a type of actor used by a Trile. Depending on a type of actor, specified object can be treated differently. A list of all actor types along with their behaviours will be provided in the future.
+
+### SurfaceType
+
+[Enum](#enum) specifying a surface type of a trile, changing the sound it emits when Gomez steps on it. Must be either **Grass**, **Metal**, **Stone**, or **Wood**.
+
+### Vector2
+
+Geometry structure containing X and Y coordinates. It's stored as an array of two floating point numbers, simirarly to how GeoJSON does it.
