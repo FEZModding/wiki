@@ -1,3 +1,3 @@
-# FEZSKY format
+# FEZNPC format
 
 ## TODO

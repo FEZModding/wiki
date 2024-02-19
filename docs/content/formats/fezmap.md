@@ -1,3 +1,3 @@
-# FEZSKY format
+# FEZMAP format
 
 ## TODO

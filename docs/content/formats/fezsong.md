@@ -1,3 +1,3 @@
-# FEZSKY format
+# FEZSONG format
 
 ## TODO

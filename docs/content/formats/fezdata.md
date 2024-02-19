@@ -1,3 +1,3 @@
-# FEZSKY format
+# FEZDATA format
 
 ## TODO

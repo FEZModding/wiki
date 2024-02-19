@@ -1,3 +1,3 @@
-# FEZSKY format
+# FEZFONT format
 
 ## TODO
