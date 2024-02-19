@@ -1,21 +1,30 @@
 # FEZTS format
 
-## Overview
+FEZ's `TrileSet` asset type is converted by Repacker into `.fezts` file bundle. This file bundle consists of four file types:
+
+- `.obj` - Wavefront OBJ file containing geometry of all triles in a trile set.
+- `.png` - PNG image containing an atlas for cubemap albedo textures of all triles in a trile set.
+- `.apng` - Optional PNG image containing an atlas of cubemap emission mask of all triles in a trile set.
+- `.json` - JSON file containing information about trile set and its triles.
+
+The purpose of these files is explained in more details in the [Trixel Art Conversion Specification](/wiki/content/trixel_art_conversion) page.
+
+## OBJ data
+
+Apart from properties explained in the Trixel Art conversion specification, Trile Sets contain each individual trile as a separate object with a name representing an ID of the trile.
+
+## JSON Data
 
 `.fezts.json` files contain trile set data stored in a JSON format. This documentation presents a structure and purpose to each property in this file format. Descriptions are incomplete in some cases, and they might be incorrect due to lack of proper testing in the game itself, but that'll improve over time.
 
-## Format differences
-TODO
-
-## Property definitions
-
 ### Trileset
+
 Top-level object stored in `.fezts.json` JSON file.
 
 |Property name|Type|Description|
 |-|-|-|
 |Name|String|Name of the trile set used internally in the game.|
-|Triles|[Trile](#trile)|Definitions of each individual trile.|
+|Triles|[Trile](#trile)|Dictionary of definitions for each individual trile, with keys being trile IDs|
 
 ### Trile
 
