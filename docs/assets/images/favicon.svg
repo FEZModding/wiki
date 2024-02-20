@@ -1,3 +1,20 @@
-<svg version="1.1" width="96" height="96" xmlns="http://www.w3.org/2000/svg">
-  <image href="favicon-96x96.png" height="96" width="96" image-rendering="optimizeSpeed" style="image-rendering: pixelated; image-rendering: optimizeSpeed;" />
+<svg version="1.1" shape-rendering="auto" viewbox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+	<!-- This image tag doesn't seem to work in icons for whatever reason -->
+	<!--image href="favicon-96x96.png" height="96" width="96" image-rendering="optimizeSpeed" style="image-rendering: pixelated; image-rendering: optimizeSpeed;" /-->
+
+<!-- Note: The following SVG was converted manually by the one and only Jenna Sloan -->
+<!-- This file is based on favicon-96x96.png and was last updated 2024-02-20T05:47:41.548Z --->
+<g id="fez">
+	<path id="tassel" d="M37,5h7v7h-15v8h8z" fill="#FB2" stroke="none" />
+	<rect id="hat1" x="44" y="5" height="22" width="15" fill="#D00" stroke="none" />
+	<rect id="hat2" x="37" y="12" height="15" width="7" fill="#A00" stroke="none" />
+</g>
+<g id="gear">
+	<path id="gearL1" d="M22,20h3v4h4v3h19v4h-15v4h-4v4h-4v30h4v3h4v4h15v-11h-15v-23h4v-3h22v3h4v23h4v7h-4v4h-15v15h-7v-11h-12v4h-4v3h-3v-3h-4v-4h-4v-4h4v-4h4v-11h-11v-15h11v-11h-4v-4h-4v-4h4v-3h4z" fill="#568" stroke="none" />
+	<path id="gearR1" d="M71,20h3v4h4v3h4v4h-4v4h-4v11h11v15h-11v11h4v4h4v4h-4v4h-4v3h-3v-3h-4v-4h-12v11h-7v-15h15v-4h4v-3h4v-30h-4v-4h-4v-4h-15v-4h19v-3h4z" fill="#89b" stroke="none" />
+	<path id="gearL2" d="M29,35h8v7h-4v23h15v11h-15v-4h-4v-3h-4v-30h4z" fill="#346" stroke="none" />
+	<path id="gearR2" d="M33,31h30v4h4v4h4v30h-4v-4h-4v-23h-4v-3h-22v-4h-4z" fill="#eee" stroke="none" />
+	<rect id="gearI1" x="41" y="50" width="11" height="11" fill="#346" stroke="none" />
+	<path id="gearI2" d="M41 46h14v15h-3v-11h-11z" fill="#224" stroke="none" />
+</g>
 </svg>
