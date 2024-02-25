@@ -29,10 +29,10 @@ The root object of `.fezmap` JSON file is a `Directory<int, MapNode>`. MapNode w
 |LockedDoorCount|Integer|Number of key doors required to be opened in this level.|
 |UnlockedDoorCount|Integer|Number of normal doors required to be opened in this level.|
 |ScriptIds|Integer[]|List of integers representing IDs of level's scripts required to be marked as completed.|
-|CubeShardCount|Integer|Behaviour currently not known.|
-|OtherCollectibleCount|Integer|Behaviour currently not known.|
-|SplitUpCount|Integer|Behaviour currently not known.|
-|SecretCount|Integer|Behaviour currently not known.|
+|CubeShardCount|Integer|The number of golden cubes required to be collected.|
+|OtherCollectibleCount|Integer|The number of collectibles that are not in chests, not golden cubes, and not cube shards, and are already floating in the level (i.e., floating maps, floating anti cubes, keys not in chests, etc).|
+|SplitUpCount|Integer|The number of cube bits required to be collected.|
+|SecretCount|Integer|The total number of tuning forks, QR codes, volumes with code patters, bit doors, scripts with the action `Level.ResolvePuzzle`, and hardcoded puzzles.|
 
 ### MapNodeConnection
 
@@ -40,7 +40,7 @@ The root object of `.fezmap` JSON file is a `Directory<int, MapNode>`. MapNode w
 |-|-|-|
 |Face|[FaceOrientation](#faceorientation)|The direction which given connection is branching towards.|
 |Node|Integer|ID of a node this connection links to.|
-|BranchOversize|Float|Behaviour currently not known.|
+|BranchOversize|Float|Adjusts the length of the line connecting the level.|
 
 ### Enum
 
