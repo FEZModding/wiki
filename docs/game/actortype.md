@@ -68,7 +68,7 @@ This page is still WIP!
 |57|TriSkull|ArtObject, Trile|Used as an artifact. Once collected, appears in the inventory.|
 |58|Tome|ArtObject, Trile|Used as an artifact. Once collected, appears in the inventory.|
 |59|SecretCube||Anti cubes|
-|60|LesserGate||Those one-way warp panel things that take you back to the hub level's WarpGate|
+|60|LesserGate|ArtObject|Those one-way warp panel things that take you back to the hub level's WarpGate|
 |61|Crumbler|Trile|This trile crumbles when stepped on.|
 |62|LaserEmitter|||
 |63|LaserBender|||
