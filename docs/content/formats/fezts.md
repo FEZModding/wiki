@@ -31,7 +31,7 @@ Top-level object stored in `.fezts.json` JSON file.
 |Property name|Type|Description|
 |-|-|-|
 |Name|String|Internal name for the trile.|
-|CubemapPath|String|Name of the cube map texture used to render the trile.|
+|CubemapPath|String|Unused, as triles use giant atlas texture. Should always be the same as `Name` property.|
 |Size|[Vector3](#vector3)|In-game size of a trile.|
 |Offset|[Vector3](#vector3)|In-game offset position from trile emplacement.|
 |Immaterial|Boolean|If true, Gomez can pass through this block. Usually used for decorative triles.|
