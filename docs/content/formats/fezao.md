@@ -34,3 +34,5 @@ An example JSON file looks like this:
 ## OBJ geometry
 
 Apart from properties explained in the Trixel Art conversion specification, Art Objects ignore all of the additional objects contained within the OBJ file, and only use the first one.
+
+UV coordinates of the object is completely ignored, and instead is recalculated by the game when it's loaded, using cubemap projection process explained in the [Trixel Art Specification](/wiki/game/trixels) page. Repacker does this job automatically when deconverting an asset.
