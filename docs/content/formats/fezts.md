@@ -13,6 +13,8 @@ The purpose of these files is explained in more details in the [Trixel Art Conve
 
 Apart from properties explained in the Trixel Art conversion specification, Trile Sets contain each individual trile as a separate object with a name representing an ID of the trile.
 
+Unlike Art Objects, UV coordinates of each individual trile are used as-is. This means you can customize UV projection and arrange texture atlas to your liking.
+
 ## JSON Data
 
 `.fezts.json` files contain trile set data stored in a JSON format. This documentation presents a structure and purpose to each property in this file format. Descriptions are incomplete in some cases, and they might be incorrect due to lack of proper testing in the game itself, but that'll improve over time.
