@@ -18,7 +18,7 @@ OBJ file should be a valid Wavefront OBJ model. Because of how the game stores m
 - Vertex positions are converted with no change.
 - Faces are expected to be triangulated.
 - Normals are replaced with the nearest cardinal direction, resulting in only six possible normal vectors. It doesn't affect surface rendering (angled surfaces work properly) and is mostly used to cubemap projection, which will be explained later on.
-- Texture coordinates are unused and instead the game calculates own texture coordinates for the art object geometry based on its cubemap algorithm, which will be explained later on. Repacker attempts to replicate this behaviour on conversion process.
+- UV coordinates are converted with no change, but Art Objects ignore them and recalculate them in a cubemap projection process explained in the [Trixel Art Specification](/wiki/game/trixels) page. Repacker will perform the same process during conversion.
 - All other properties (groups, materials, line segments etc.) are ignored.
 - Multiple objects in a file are interpreted differently depending on the asset type.
 
@@ -28,8 +28,6 @@ In the original form, FEZ stores cubemap as a single texture, with emission map 
 
 - PNG file contains trixel art cubemap albedo texture. Alpha channel is not used, meaning it's not possible to create triles and art objects with transparent texture.
 - APNG file contains trixel art cubemap grayscale emission mask. Only red channel is used by Repacker.
-
-These textures are used in a cubemap projection process explained in the [Trixel Art Specification](/wiki/game/trixels) page. Understanding this projection process is essential in order to create a cubemap texture that will be displayed on top of the model in the game properly. If you don't want to UV map your custom geometry manually, convert your model through Repacker into XNB assset and then back into FEZAO file bundle - this way you can let Repacker automatically handle the projection.
 
 ## JSON file
 
