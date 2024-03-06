@@ -24,7 +24,7 @@ Top-level object stored in `.fezfont.json` JSON file.
 |-|-|-|
 |LineSpacing|Number|The line spacing of this font.|
 |Spacing|Number|The spacing of the font characters.|
-|Glyphs|[Glyph](#Glyph)[]|List of character data in this font.|
+|Glyphs|[Glyph](#glyph)[]|List of character data in this font.|
 
 ### Glyph
 
