@@ -44,7 +44,7 @@
 
 All enums are stored as PascalCamelCase string parameters.
 
-### shardnotes
+### ShardNotes
 
 [Enum](#enum) specifying cube bit pickup sounds. It can take one of these values:
 
@@ -74,7 +74,7 @@ Asharp3,
 B3,
 C4
 
-### assemblechords
+### AssembleChords
 
 [Enum](#enum) specifying treasure get sound (not treasure chests). It can take one of these values:
 
