@@ -6,7 +6,7 @@
 
 ## Property definitions
 
-### MapNode
+### NpcMetadata
 
 |Property name|Type|Description|
 |-|-|-|
