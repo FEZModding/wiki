@@ -16,8 +16,8 @@
 |Name|String|The unique name of the song. Usually this is related to the file name.|
 |Tempo|Integer|TODO|
 |TimeSignature|Integer|TODO|
-|Notes|[ShardNotes](#shardnotes)[]|TODO|
-|AssembleChord|[AssembleChords](#assemblechords)|TODO|
+|Notes|[ShardNotes](#shardnotes)[]|The pitch of the musical tones to play when collecting a cube bit.|
+|AssembleChord|[AssembleChords](#assemblechords)|The pitch of the collect jingle to play when collecting a treasure that's not in a treasure chest.|
 |RandomOrdering|Boolean|TODO|
 |CustomOrdering|Integer[]|TODO|
 
@@ -46,7 +46,7 @@ All enums are stored as PascalCamelCase string parameters.
 
 ### shardnotes
 
-[Enum](#enum) specifying how level should appear in the map. It can take one of three values:
+[Enum](#enum) specifying cube bit pickup sounds. It can take one of these values:
 
 C2,
 Csharp2,
@@ -75,6 +75,8 @@ B3,
 C4
 
 ### assemblechords
+
+[Enum](#enum) specifying treasure get sound (not treasure chests). It can take one of these values:
 
 C_maj,
 Csharp_maj,
