@@ -269,7 +269,7 @@ Structure defining custom behaviour which can await certain triggers, react to s
 
 [ScriptTrigger](#scripttrigger), [ScriptCondition](#scriptcondition) and [ScriptAction](#scriptaction) are using string-encoded operations. Their syntax may vary, but they will always start with entity identifier followed by a dot. Entity identifier is simply its class name. If an entity is not static (like Level or Camera), it's followed by a square brackets [] operator containing an ID of an object (like Volume or ArtObject).
 
-A full list of entities and their exposed triggers, properties and actions is available [here](../../game/scripting).
+A full list of entities and their exposed triggers, properties and actions is available [at the "Scripting Reference" page](../../game/scripting).
 
 ### ScriptTrigger
 
