@@ -16,3 +16,16 @@
 <link rel="manifest" href="/wiki/assets/images/site.webmanifest">
 <meta name="msapplication-config" content="/wiki/assets/images/browserconfig.xml">
 <meta name="theme-color" content="#ffffff"-->
+<script>
+document.addEventListener("load", function(){
+	/* adds an icon to links for external links */
+	var links = document.getElementsByTagName("a");
+	var currenthostname = window.location.hostname
+	for(var i=0; i<links.length; ++i){
+		var link = links[i];
+		if(link.textContent.trim().length>0 && !link.href.includes("github") && link.hostname != currenthostname){
+			link.classList.add("external-link");
+		}
+	}
+});
+</script>

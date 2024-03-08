@@ -229,9 +229,9 @@ h1, h2, h3, .content>hr{
 	/* Note the [target="_blank"] selector applies to links that open in new tabs,
 	   and the selector checking all the [href] should apply to most external links. */
 	/* Note: it might be faster and more flexible to apply this style in JS */
-	.external-link,
 	/* a:not(:has(i:empty))[target="_blank"]::after, */
-	a:not(:has(i:empty)):not([href^="."]):not([href^="/"]):not([href^="#"]):not([href*="github"])::after {
+	/* a:not(:has(i:empty)):not([href^="."]):not([href^="/"]):not([href^="#"]):not([href*="github"])::after,*/
+	.external-link::after {
 		content: "";
 		display: inline-block;
 		height: 2ex;
