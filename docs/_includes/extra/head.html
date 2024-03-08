@@ -20,7 +20,7 @@
 document.addEventListener("load", function(){
 	/* adds an icon to links for external links */
 	var links = document.getElementsByTagName("a");
-	var currenthostname = window.location.hostname
+	var currenthostname = window.location.hostname;
 	for(var i=0; i<links.length; ++i){
 		var link = links[i];
 		if(link.textContent.trim().length>0 && !link.href.includes("github") && link.hostname != currenthostname){
