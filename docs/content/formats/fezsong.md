@@ -23,20 +23,24 @@
 
 ### Loop
 
+```note
+The pairs of LoopTimesFrom to LoopTimesTo, and TriggerFrom to TriggerTo define bounds for random values 
+```
+
 |Property name|Type|Description|
 |-|-|-|
-|Duration|Integer|TODO|
-|LoopTimesFrom|Integer|TODO|
-|LoopTimesTo|Integer|TODO|
+|Duration|Integer|The number of musical bars in this loop.|
+|LoopTimesFrom|Integer|The minimum number times to repeat the loop before playing again.|
+|LoopTimesTo|Integer|The maximum number times to repeat the loop before playing again.|
 |Name|String|The name of this loop. Should be distinct from other loop names in this song.|
-|TriggerFrom|Integer|TODO|
-|TriggerTo|Integer|TODO|
-|Delay|Integer|TODO|
+|TriggerFrom|Integer|The minimum number of musical bars to wait before playing again.|
+|TriggerTo|Integer|The maximum number of musical bars to wait before playing again.|
+|Delay|Integer|The number of musical bars to wait before playing for the first time.|
 |Night|Boolean|If this loop plays during night|
 |Day|Boolean|If this loop plays during day|
 |Dusk|Boolean|If this loop plays during dusk|
 |Dawn|Boolean|If this loop plays during dawn|
-|FractionalTime|Boolean|TODO|
+|FractionalTime|Boolean|If false, the random value determined by the range TriggerFrom to TriggerTo will be an integer, otherwise it will be a floating point value.|
 |OneAtATime|Boolean|TODO|
 |CutOffTail|Boolean|TODO|
 
