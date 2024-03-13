@@ -12,15 +12,15 @@
 
 |Property name|Type|Description|
 |-|-|-|
-|Name|String|TODO|
-|Background|String|TODO|
+|Name|String|The unique name of the sky. This should be the same as the folder name containing all the sky assets for this sky.|
+|Background|String|The name of the texture2d file to use for the background.|
 |WindSpeed|Float|TODO|
-|Density|Float|TODO|
-|Layers|[SkyLayer](#skylayer)[]|TODO|
-|Clouds|String[]|TODO|
-|Shadows|String|TODO|
-|Stars|String|TODO|
-|CloudTint|String|TODO|
+|Density|Float|Multiplier affecting the number of Clouds in the sky.|
+|Layers|[SkyLayer](#skylayer)[]|The sky layers.|
+|Clouds|String[]|The names of the texture2d files to use for the clouds.|
+|Shadows|String|If not null, the name of the texture2d file to use for the shadows.|
+|Stars|String|If not null, the name of the texture2d file to use for the stars.|
+|CloudTint|String|If not null, the name of the texture2d file to use for the cloud tint.|
 |VerticalTiling|Boolean|TODO|
 |HorizontalScrolling|Boolean|TODO|
 |LayerBaseHeight|Float|TODO|
@@ -41,8 +41,8 @@
 
 |Property name|Type|Description|
 |-|-|-|
-|Name|String|TODO|
-|InFront|Boolean|TODO|
-|Opacity|Float|TODO|
+|Name|String|The names of the texture2d file for this sky layer.|
+|InFront|Boolean|If true, this layer will always be on top.|
+|Opacity|Float|The opacity of this layer.|
 |FogTint|Float|TODO|
 
