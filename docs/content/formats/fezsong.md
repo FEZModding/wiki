@@ -1,10 +1,8 @@
 # FEZSONG format
 
-## TODO
-
 ## Overview
 
-`.feznpc` file contains song metadata stored in JSON format.
+`.feznpc` file contains song metadata stored in JSON format. This documentation presents a structure and purpose to each property in this file format. Descriptions are incomplete in some cases, and they might be incorrect due to lack of proper testing in the game itself, but that'll improve over time.
 
 ## Property definitions
 
@@ -12,14 +10,14 @@
 
 |Property name|Type|Description|
 |-|-|-|
-|Loops|[Loop](#loop)[]|TODO|
+|Loops|[Loop](#loop)[]|Behaviour currently unknown.|
 |Name|String|The unique name of the song. Usually this is related to the file name.|
-|Tempo|Integer|TODO|
-|TimeSignature|Integer|TODO|
+|Tempo|Integer|Behaviour currently unknown.|
+|TimeSignature|Integer|Behaviour currently unknown.|
 |Notes|[ShardNotes](#shardnotes)[]|The pitch of the musical tones to play when collecting a cube bit.|
 |AssembleChord|[AssembleChords](#assemblechords)|The pitch of the collect jingle to play when collecting a treasure that's not in a treasure chest.|
-|RandomOrdering|Boolean|TODO|
-|CustomOrdering|Integer[]|TODO|
+|RandomOrdering|Boolean|Behaviour currently unknown.|
+|CustomOrdering|Integer[]|Behaviour currently unknown.|
 
 ### Loop
 
@@ -41,8 +39,8 @@ The pairs of LoopTimesFrom to LoopTimesTo, and TriggerFrom to TriggerTo define b
 |Dusk|Boolean|If this loop plays during dusk|
 |Dawn|Boolean|If this loop plays during dawn|
 |FractionalTime|Boolean|If false, the random value determined by the range TriggerFrom to TriggerTo will be an integer, otherwise it will be a floating point value.|
-|OneAtATime|Boolean|TODO|
-|CutOffTail|Boolean|TODO|
+|OneAtATime|Boolean|Behaviour currently unknown.|
+|CutOffTail|Boolean|Behaviour currently unknown.|
 
 ### Enum
 

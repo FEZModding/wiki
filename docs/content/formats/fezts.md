@@ -38,7 +38,7 @@ Top-level object stored in `.fezts.json` JSON file.
 |Offset|[Vector3](#vector3)|In-game offset position from trile emplacement.|
 |Immaterial|Boolean|If true, Gomez can pass through this block. Usually used for decorative triles.|
 |SeeThrough|Boolean|If true, the camera can render whatever is behind the trile through its transparent spots.|
-|Thin|Boolean|If true, the trile is thin. TODO.|
+|Thin|Boolean|If true, the trile is thin. Exact behaviour currently unknown.|
 |ForceHugging|Boolean|If true, the trile will "hug" (snap to) the nearest trile.|
 |Faces|[CollisionType Dictionary](#collisiontype-dictionary)|Defines how Gomez should interfact with each face of a trile.|
 |Type|[ActorType](#actortype)|Defines a type of the trile, which can give it special properties (mushroom bounce, door unlocking, bomb, etc.).|

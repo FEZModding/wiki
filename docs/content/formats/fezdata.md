@@ -1,7 +1,5 @@
 # FEZDATA format
 
-## TODO
-
 ## JSON Data
 
 `.fezdata.json` files contain FEZ language text localization data stored in a JSON format. This documentation presents a structure and purpose to each property in this file format. Descriptions are incomplete in some cases, and they might be incorrect due to lack of proper testing in the game itself, but that'll improve over time.
