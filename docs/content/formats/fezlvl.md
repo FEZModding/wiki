@@ -170,15 +170,22 @@ Structure defining the path of movement and its properties. It's used by [Trile 
 
 Structure defining properties of a path segment.
 
+```note
+If both Acceleration and Deceleration are 0, the easing function is linear.
+If only Acceleration is 0, the easing function is quadratic ease-out.
+If both Acceleration and Deceleration are NOT 0, the easing function is sine ease-in-out.
+If only Deceleration is 0, the easing function is quadratic ease-in.
+```
+
 |Property name|Type|Description|
 |-|-|-|
 |Destination|[Vector3](#vector3)|Destination of this path segment.|
 |Duration|Float|Time it takes to traverse the segment, in seconds.|
 |WaitTimeOnStart|Float|Time to wait on start of the segments, in seconds.|
 |WaitTimeOnFinish|Float|Time to wait on end of the segment, in seconds.|
-|Acceleration|Float|Acceleration factor. Exact behaviour currently unknown.|
-|Deceleration|Float|Deceleration factor. Exact behaviour currently unknown.|
-|JitterFactor|Float|Jittering factor. Exact behaviour currently unknown.|
+|Acceleration|Float|Acceleration factor. For exact behaviour, see note above.|
+|Deceleration|Float|Deceleration factor. For exact behaviour, see note above.|
+|JitterFactor|Float|The magnitude for how jittery/shaky this path is.|
 |Orientation|[Quaternion](#quaternion)|Behaviour currently unknown.|
 |CustomData|[CameraNodeData](#cameranodedata)|Contains additional camera data. Can be null.|
 
@@ -224,10 +231,10 @@ Structure defining settings for a volume instance.
 |DotDialogue|[DotDialogueLine](#dotdialogueline)[]|List of Dot dialogues used by this volume.|
 |CodePattern|[CodeInput](#codeinput)[]|Input combo used by this volume.|
 |IsBlackHole|Boolean|If true, this volume is a black hole.|
-|NeedsTrigger|Boolean|Behaviour currently unknown.|
-|IsSecretPassage|Boolean|This is used for the secret shortcut doors. Exact behaviour currently unknown.|
-|WaterLocked|Boolean|Behaviour currently unknown.|
-|IsPointOfInterest|Boolean|Behaviour currently unknown.|
+|NeedsTrigger|Boolean|If true, this volume is disabled by default.|
+|IsSecretPassage|Boolean|This is used for the secret shortcut doors. If true, this door will take the player to the first volume in the target level that has IsSecretPassage.|
+|WaterLocked|Boolean|If the door could be underwater. Exact behaviour currently unknown.|
+|IsPointOfInterest|Boolean|If true, this volume will be permanently disabled when the puzzle is completed or the chest is opened. Mainly used for Dot's tutorial text.|
 |FarawayPlaneOffset|[Vector2](#vector2)|Behaviour currently unknown.|
 
 ### DotDialogueLine
@@ -236,7 +243,7 @@ Structure defining Dot dialogue.
 
 |Property name|Type|Description|
 |-|-|-|
-|ResourceText|String|Behaviour currently unknown.|
+|ResourceText|String|The key to get the localized text from the FEZDATA file.|
 |Grouped|Boolean|Behaviour currently unknown.|
 
 ### CodeInput
@@ -385,13 +392,13 @@ Structure defining background plane, its location and properties.
 |AllowOverbrightness|Boolean|Behaviour currently unknown.|
 |Filter|[Color](#color)|Behaviour currently unknown.|
 |Animated|Boolean|Behaviour currently unknown.|
-|Doublesided|Boolean|Behaviour currently unknown.|
+|Doublesided|Boolean|If true, the texture is also rendered on the back of the mesh.|
 |Opacity|Float|Behaviour currently unknown.|
 |AttachedGroup|Integer|A [Trile Group](#trilegroup) this background plane belongs to. Can be null.|
-|Billboard|Boolean|Behaviour currently unknown.|
+|Billboard|Boolean|If true, this BackgroundPlane will always face the camera.|
 |SyncWithSamples|Boolean|Behaviour currently unknown.|
 |Crosshatch|Boolean|Behaviour currently unknown.|
-|UnusedFlag|Boolean|Behaviour currently unknown.|
+|UnusedFlag|Boolean|Unused.|
 |AlwaysOnTop|Boolean|Behaviour currently unknown.|
 |Fullbright|Boolean|Behaviour currently unknown.|
 |PixelatedLightmap|Boolean|Behaviour currently unknown.|
@@ -404,7 +411,7 @@ Structure defining background plane, its location and properties.
 
 ### Color
 
-Structure containing information about R, G, B and A components of the color. It's stored as a HTML color code (`#rrggbbaa`) in a string.
+Structure containing information about R, G, B and A components of the color. It's stored in CSS/HTML-style eight-digit hexadecimal color syntax (`#rrggbbaa`) in a string.
 
 ### NpcInstance
 
@@ -414,8 +421,8 @@ Structure defining an instance of a non-playable character in the level.
 |-|-|-|
 |Name|String|Name of an NPC to use for this instance.|
 |Position|[Vector3](#vector3)|Initial position of this NPC instance.|
-|DestinationOffset|[Vector3](#vector3)|Behaviour currently unknown.|
-|WalkSpeed|Float|Behaviour currently unknown.|
+|DestinationOffset|[Vector3](#vector3)|The position this NPC will move to.|
+|WalkSpeed|Float|How fast this NPC will move.|
 |RandomizeSpeech|Boolean|Behaviour currently unknown.|
 |SayFirstSpeechLineOnce|Boolean|Behaviour currently unknown.|
 |AvoidsGomez|Boolean|If true, this NPC will attempt to flee from Gomez.|
