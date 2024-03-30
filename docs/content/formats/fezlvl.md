@@ -421,14 +421,14 @@ Structure defining an instance of a non-playable character in the level.
 |-|-|-|
 |Name|String|Name of an NPC to use for this instance.|
 |Position|[Vector3](#vector3)|Initial position of this NPC instance.|
-|DestinationOffset|[Vector3](#vector3)|The position this NPC will move to.|
+|DestinationOffset|[Vector3](#vector3)|The position this NPC will move to say when talked to.|
 |WalkSpeed|Float|How fast this NPC will move.|
-|RandomizeSpeech|Boolean|Behaviour currently unknown.|
-|SayFirstSpeechLineOnce|Boolean|Behaviour currently unknown.|
+|RandomizeSpeech|Boolean|If true, will pick a random line from this NpcInstance's `Speech` array when talked to, otherwise they will be sequential.|
+|SayFirstSpeechLineOnce|Boolean|If true, this NpcInstance will only say the first entry in their `Speech` array a single time.|
 |AvoidsGomez|Boolean|If true, this NPC will attempt to flee from Gomez.|
-|ActorType|[ActorType](#actortype)|Behaviour currently unknown.|
-|Speech|[SpeechLine](#speechline)[]|Behaviour currently unknown.|
-|Actions|[NpcAction Dictionary](#npcaction-dictionary)|Behaviour currently unknown.|
+|ActorType|[ActorType](#actortype)|The ActorType of this NPC. Mainly used for owls, but also for rendering LightningGhosts.|
+|Speech|[SpeechLine](#speechline)[]|The collection of SpeechLines this NpcInstance can say. Note this can be overrided by a Script with the action `NonPlayerCharacters[id].Say`|
+|Actions|[NpcAction Dictionary](#npcaction-dictionary)|The NpcActions this NPC can take.|
 
 ### SpeechLine
 
@@ -436,15 +436,15 @@ Structure defining a speech line and its additional attributes.
 
 |Property name|Type|Description|
 |-|-|-|
-|Text|String|Language identifier of a text which is used.|
+|Text|String|Language identifier of a text which is used. See also: [fezdata's LanguageResource](./fezdata#languageresource).|
 |OverrideContent|[NpcActionContent](#npcactioncontent)|Behaviour currently unknown.|
 
 ### NpcActionContent
 
 |Property name|Type|Description|
 |-|-|-|
-|AnimationName|String|Behaviour currently unknown.|
-|SoundName|String|Behaviour currently unknown.|
+|AnimationName|String|The name of the AnimatedTexture file in the `"Character Animations/" + Npc.Name + "/"` directory to use for this action.|
+|SoundName|String|The name of the SoundEffect file in the `"Sounds/Npc/"` directory to use for this action.|
 
 ### NpcAction Dictionary
 
