@@ -270,7 +270,7 @@ Structure defining custom behaviour which can await certain triggers, react to s
 |IgnoreEndTriggers|Boolean|Behaviour currently unknown.|
 |LevelWideOneTime|Boolean|Behaviour currently unknown.|
 |Disabled|Boolean|If set, this script will be disabled until enabled by another script.|
-|IsWinCondition|Boolean|If true, this script should be included in the [Conditions.ScriptIds\[\]](./fezmap#Conditions) for the appropriate [fezmap.MapNode](./fezmap#MapNode)|
+|IsWinCondition|Boolean|If true, this script should be included in the [Conditions.ScriptIds\[\]](./fezmap#winconditions) for the appropriate [fezmap.MapNode](./fezmap#mapnode)|
 
 ### Script Operation
 
