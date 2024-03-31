@@ -70,9 +70,9 @@ This page is still WIP!
 |59|SecretCube||Anti cubes|
 |60|LesserGate|ArtObject|Those one-way warp panel things that take you back to the hub level's WarpGate|
 |61|Crumbler|Trile|This trile crumbles when stepped on.|
-|62|LaserEmitter|||
-|63|LaserBender|||
-|64|LaserReceiver|||
+|62|LaserEmitter|ArtObject|Has an unused `SetEnabled` ScriptAction|
+|63|LaserBender|ArtObject|Unused|
+|64|LaserReceiver|ArtObject|Has an unused `Activate` ScriptTrigger|
 |65|RebuildingHexahedron|ArtObject|Unused|
 |66|TreasureMap||It's a treasure map. See ActorSettings.TreasureMapName for the name of the map.|
 |67|Timeswitch|ArtObject|Those things that you can screw out that move stuff and then move back when the time is up.|
@@ -88,9 +88,9 @@ This page is still WIP!
 |77|Bell|ArtObject|Uses bell puzzle logic on that art object. There can be only one in a level.|
 |78|RotatingGroup|Group|This group spins around a set point around a set axis every `Group.SpinFrequency` seconds, moving Gomez with the group.|
 |79|BigWaterfall|BackgroundPlane||
-|80|Telescope|||
+|80|Telescope|ArtObject|When interacted with, will show stars depending on the camera's viewpoint.|
 |81|SinkPickup||Used internally for SuckBlock.|
-|82|QrCode|||
+|82|QrCode|ArtObject|Almost functionally equivalent to the `Rumbler` ActorType, but there's no vibrations, and if one if this code is solved, the first ArtObject in `SEWER_QR` will be marked as inactivate, the second (Note: these are only set if the levels are visited)|
 |83|FpsPost|ArtObject|Unused|
 |84|PieceOfHeart||The red/heart cubes|
 |85|SecretPassage|ArtObject|Secret shortcut door that require visiting both levels before they are enabled.|
