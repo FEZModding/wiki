@@ -143,14 +143,14 @@ Structure containing a list of trile instances grouped together and parameters o
 |GeyserPauseFor|Float|For the Geyser ActorType. The amount of seconds this group will not be in the lifting state.|
 |GeyserLiftFor|Float|For the Geyser ActorType. The amount of seconds this group will be in the lifting state.|
 |GeyserApexHeight|Float|For the Geyser ActorType. The maximum height difference this group will reach.|
-|SpinCenter|[Vector3](#vector3)|Behaviour currently unknown.|
-|SpinClockwise|Boolean|Behaviour currently unknown.|
-|SpinFrequency|Float|Behaviour currently unknown.|
+|SpinCenter|[Vector3](#vector3)|For the RotatingGroup ActorType. If it is not equal to `Vector3.Zero`, the group will rotate using this Vector3. Exact behaviour currently unknown.|
+|SpinClockwise|Boolean|For the RotatingGroup ActorType. If true, will spin clockwise, otherwise will anticlockwise.|
+|SpinFrequency|Float|For the RotatingGroup ActorType. The number of seconds this group waits between spins.|
 |SpinNeedsTriggering|Boolean|Behaviour currently unknown.|
-|Spin180Degrees|Boolean|Behaviour currently unknown.|
-|FallOnRotate|Boolean|Behaviour currently unknown.|
-|SpinOffset|Float|Behaviour currently unknown.|
-|AssociatedSound|String|Behaviour currently unknown.|
+|Spin180Degrees|Boolean|For the RotatingGroup ActorType. If true, will spin 180 degrees, otherwise will spin 90 degrees.|
+|FallOnRotate|Boolean|For the RotatingGroup ActorType. If true, Gomez will fall when the group spins, otherwise if he is holding onto the group, he will rotate with the group.|
+|SpinOffset|Float|For the RotatingGroup ActorType. The amount of seconds to wait before initially spinning this group.|
+|AssociatedSound|String|For the RotatingGroup ActorType. The name of the SoundEffect file in the `"Sounds/MiscActors/"` directory to play will this group spins.|
 
 ### MovementPath
 
