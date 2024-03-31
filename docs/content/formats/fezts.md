@@ -72,11 +72,11 @@ All enums are stored as PascalCamelCase string parameters.
 
 |CollisionType|Description|
 |-|-|
-|        AllSides  | for blocking level boundaries or obstacles. Also used for triles that can be picked up. Gomez cannot go in front of these triles. |
+|        AllSides  | for blocking level boundaries or obstacles. Also used for triles that can be picked up. Gomez cannot go through these triles. |
 |        TopOnly   | for fall-through/climbable platforms |
-|        None      | no-collide triles that make Gomez go in front of them|
-|        Immaterial| no-collide triles that DON’T make Gomez go in front of them|
-|TopNoStraightLedge| for fall-through platforms that Gomez cannot grab onto the ledge|
+|        None      | no-collide triles |
+|        Immaterial| no-collide triles that DON’T make Gomez go in front of them. Mostly unused; use CollisionType `None` and set `Trile.Immaterial` instead.|
+|TopNoStraightLedge| for platforms that Gomez cannot grab onto the ledge, and cannot fall through, but can stand on. (e.g., the shelves in the kitchen)|
 
 ### ActorType
 
