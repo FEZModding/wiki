@@ -124,9 +124,9 @@ Structure containing additional information of a trile instance.
 |-|-|-|
 |ContainedTrile|int|Unused?|
 |SignText|String|Language identifier of a text which appears when interacting with this trile.|
-|Sequence|String|Behaviour currently unknown. Related to blinking blocks.|
-|SequenceSampleName|String|Behaviour currently unknown. Same as above.|
-|SequenceAlternateSampleName|String|Behaviour currently unknown. Same as above.|
+|Sequence|Boolean[]|For the Crystal Trile ActorType. If not null, should be an array of exactly 16 booleans that determine when this blink block is visible/enabled in a measure.|
+|SequenceSampleName|String|For the Crystal Trile ActorType. The SoundEffect in the `Path.Combine("Sounds", LevelManager.SequenceSamplesPath ?? "")` directory to play when this blink block appears.|
+|SequenceAlternateSampleName|String|For the Crystal Trile ActorType. If not null, the SoundEffect in the `Path.Combine("Sounds", LevelManager.SequenceSamplesPath ?? "")` directory to play when this blink block appears on an odd/off beat.|
 |HostVolume|Integer|ID of host [Volume](#volume) into which this moveable crate will be accepted. As seen in the level ZU_4_SIDE.|
 
 ### TrileGroup
