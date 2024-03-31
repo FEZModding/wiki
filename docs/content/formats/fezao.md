@@ -31,6 +31,10 @@ An example JSON file looks like this:
 }
 ```
 
+```note
+ArtObjects have no collision themselves, but instead have invisible collision triles placed into the level at the same location
+```
+
 ## OBJ geometry
 
 Apart from properties explained in the Trixel Art conversion specification, Art Objects ignore all of the additional objects contained within the OBJ file, and only use the first one.

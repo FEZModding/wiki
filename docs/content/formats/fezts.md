@@ -66,6 +66,18 @@ All enums are stored as PascalCamelCase string parameters.
 
 [Enum](#enum) specifiying a type of a collision for a trile. Must be one of  **"None"**, **"AllSides"**, **"Immaterial"**, **"TopOnly"**, or **"TopNoStraightLedge"**.
 
+[Click here for Renaud Bédard's explaination of collision and physics in FEZ](https://theinstructionlimit.com/behind-fez-collision-and-physics)
+
+![collision_types.png](/wiki/assets/images/collision_types.png)
+
+|CollisionType|Description|
+|-|-|
+|        AllSides  | for blocking level boundaries or obstacles. Also used for triles that can be picked up. Gomez cannot go in front of these triles. |
+|        TopOnly   | for fall-through/climbable platforms |
+|        None      | no-collide triles that make Gomez go in front of them|
+|        Immaterial| no-collide triles that DON’T make Gomez go in front of them|
+|TopNoStraightLedge| for fall-through platforms that Gomez cannot grab onto the ledge|
+
 ### ActorType
 
 [Enum](#enum) specifying a type of actor used by a Trile. Depending on a type of actor, specified object can be treated differently. A list of all actor types along with their behaviours will be provided in the future.
