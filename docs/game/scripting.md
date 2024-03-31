@@ -2,9 +2,9 @@
 
 ## Type Descriptors
 
-[Events](#Events) are ScriptTriggers<br />
-[Properties](#Properties) are for ScriptConditions (operators not included)<br />
-[Operations](#Operations) are ScriptActions
+[Events](#events) are ScriptTriggers<br />
+[Properties](#properties) are for ScriptConditions (operators not included)<br />
+[Operations](#operations) are ScriptActions
 
 ### Events
 

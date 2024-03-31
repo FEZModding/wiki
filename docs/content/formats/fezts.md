@@ -80,7 +80,7 @@ All enums are stored as PascalCamelCase string parameters.
 
 ### ActorType
 
-[Enum](#enum) specifying a type of actor used by a Trile. Depending on a type of actor, specified object can be treated differently. A list of all actor types along with their behaviours will be provided in the future.
+[Enum](#enum) specifying a type of actor used by a Trile. Depending on a type of actor, specified object can be treated differently. A list of all actor types along with their behaviours can be found on the [ActorType Enum reference page](/wiki/game/actortype).
 
 ### SurfaceType
 

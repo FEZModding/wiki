@@ -209,7 +209,7 @@ Structure containing custom information about camera movement along path.
 
 ### ActorType
 
-[Enum](#enum) specifying a type of actor used by TrileGroup, Art Object or Background Plane. Depending on a type of actor, specified object can be treated differently. A list of all actor types along with their behaviours will be provided in the future.
+[Enum](#enum) specifying a type of actor used by TrileGroup, Art Object or Background Plane. Depending on a type of actor, specified object can be treated differently. A list of all actor types along with their behaviours can be found on the [ActorType Enum reference page](/wiki/game/actortype).
 
 ### Volume
 
@@ -276,7 +276,7 @@ Structure defining custom behaviour which can await certain triggers, react to s
 
 [ScriptTrigger](#scripttrigger), [ScriptCondition](#scriptcondition) and [ScriptAction](#scriptaction) are using string-encoded operations. Their syntax may vary, but they will always start with entity identifier followed by a dot. Entity identifier is simply its class name. If an entity is not static (like Level or Camera), it's followed by a square brackets [] operator containing an ID of an object (like Volume or ArtObject).
 
-A full list of entities and their exposed triggers, properties and actions is available [at the "Scripting Reference" page](../../game/scripting).
+A full list of entities and their exposed triggers, properties and actions is available [at the "Scripting Reference" page](/wiki/game/scripting).
 
 ### ScriptTrigger
 
