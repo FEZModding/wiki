@@ -51,7 +51,7 @@ This page is still WIP!
 |40|SplitUpCube||Unused? Likely was for an old version of cube bits.|
 |41|UnlockedDoor|Trile|It's a door that does not require any unlocking.|
 |42|Hole|Trile|This trile is a blackhole. See also `VolumeActorSettings.IsBlackHole`|
-|43|Couch|||
+|43|Couch|Trile||
 |44|Valve|ArtObject|Gomez can spin them around, which triggers events.|
 |45|Rumbler|ArtObject|Used for tuning forks. See ActorSettings.VibrationPattern for the code pattern.|
 |46|Waterfall|BackgroundPlane|Spawns water particle effects.|
