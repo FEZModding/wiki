@@ -90,7 +90,7 @@ This page is still WIP!
 |79|BigWaterfall|BackgroundPlane||
 |80|Telescope|ArtObject|When interacted with, will show stars depending on the camera's viewpoint.|
 |81|SinkPickup||Used internally for SuckBlock.|
-|82|QrCode|ArtObject|Almost functionally equivalent to the `Rumbler` ActorType, but there's no vibrations, and if one if this code is solved, the first ArtObject in `SEWER_QR` will be marked as inactivate, the second (Note: these are only set if the levels are visited)|
+|82|QrCode|ArtObject|Almost functionally equivalent to the `Rumbler` ActorType, but there's no vibrations, and if one if this code is solved, the first ArtObject in the `SEWER_QR` level will also be marked as inactive, and the second Volume in both the `ZU_THRONE_RUINS` and `ZU_HOUSE_EMPTY` levels also will be marked as inactive, and all three of the aforementioned levels will have their save data's `FilledConditions.SecretCount` incremented by one (Note: this data for other levels is only set for levels that were visited)|
 |83|FpsPost|ArtObject|Unused|
 |84|PieceOfHeart||The red/heart cubes|
 |85|SecretPassage|ArtObject|Secret shortcut door that require visiting both levels before they are enabled.|
