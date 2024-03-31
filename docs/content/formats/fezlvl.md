@@ -139,10 +139,10 @@ Structure containing a list of trile instances grouped together and parameters o
 |Path|[MovementPath](#movementpath)|Path this group moves along|
 |Heavy|Boolean|Behaviour currently unknown.|
 |ActorType|[ActorType](#actortype)|Type of actor this group should be treated as.|
-|GeyserOffset|Float|Behaviour currently unknown.|
-|GeyserPauseFor|Float|Behaviour currently unknown.|
-|GeyserLiftFor|Float|Behaviour currently unknown.|
-|GeyserApexHeight|Float|Behaviour currently unknown.|
+|GeyserOffset|Float|For the Geyser ActorType. The amount of seconds to wait before initially moving this group.|
+|GeyserPauseFor|Float|For the Geyser ActorType. The amount of seconds this group will not be in the lifting state.|
+|GeyserLiftFor|Float|For the Geyser ActorType. The amount of seconds this group will be in the lifting state.|
+|GeyserApexHeight|Float|For the Geyser ActorType. The maximum height difference this group will reach.|
 |SpinCenter|[Vector3](#vector3)|Behaviour currently unknown.|
 |SpinClockwise|Boolean|Behaviour currently unknown.|
 |SpinFrequency|Float|Behaviour currently unknown.|
