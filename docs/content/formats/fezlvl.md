@@ -217,7 +217,7 @@ Structure defining a cuboid zone with custom properties. These zones can also be
 
 |Property name|Type|Description|
 |-|-|-|
-|Orientations|[FaceOrientation](#faceorientation)|Orientations towards which perspective can be shifted for this Volume to work.|
+|Orientations|[FaceOrientation](#faceorientation)[]|Orientations towards which perspective can be shifted for this Volume to work.|
 |From|[Vector3](#vector3)|Coordinates of one of the corners of this volume zone.|
 |To|[Vector3](#vector3)|Coordinates of another of the corners of this volume zone.|
 |ActorSettings|[VolumeActorSettings](#volumeactorsettings)|Settings of this volume instance.|
