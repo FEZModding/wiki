@@ -10,10 +10,10 @@
 
 | EntityIdentifier | TriggerName | RestrictedToActorTypes | Description |
 |---|
-| ArtObjects\[id\] | TreasureOpened |   |  |
-| ArtObjects\[id\] | Open | EightBitDoor | When it's opened |
+| ArtObject\[id\] | TreasureOpened |   |  |
+| ArtObject\[id\] | Open | EightBitDoor | When it's opened |
 | Camera | Rotated |   | When the viewpoint changed |
-| ArtObjects\[id\] | Activated | Rumbler, CodeMachine, QrCode | When the right pattern is input |
+| ArtObject\[id\] | Activated | Rumbler, CodeMachine, QrCode | When the right pattern is input |
 | Gomez | EnteredDoor |   |  |
 | Gomez | Jumped |   |  |
 | Gomez | ClimbedLadder |   |  |
@@ -37,77 +37,73 @@
 | Gomez | CollectedPieceOfHeart |   |  |
 | Gomez | OpenedTreasure |   |  |
 | Gomez | Landed |   |  |
-| ArtObjects\[id\] | Activate | LaserReceiver | When a receiver receives a laser |
+| ArtObject\[id\] | Activate | LaserReceiver | When a receiver receives a laser |
 | Level | Start |   | When the level starts |
 | Owl | OwlCollected |   |  |
 | Owl | OwlLanded |   |  |
-| ArtObjects\[id\] | RotatedRight | PivotHandle | When it's been rotated right |
-| ArtObjects\[id\] | RotatedLeft | PivotHandle | When it's been rotated left |
-| Scripts\[id\] | Complete |   | When the script timeouts or terminates |
-| Groups\[id\] | Sucked | SuckBlock | When it's completely inside its host volume |
-| Groups\[id\] | Explode | PushSwitch, ExploSwitch, PushSwitchPermanent | When a bomb explodes near this switch |
-| Groups\[id\] | Push | PushSwitch, ExploSwitch, PushSwitchPermanent | When this switch is pushed completely |
-| Groups\[id\] | Lift | PushSwitch, ExploSwitch, PushSwitchPermanent | When this switch is lifted back up |
-| ArtObjects\[id\] | ScrewedOut | Timeswitch | When the screw minimally sticks out from the base (it's been screwed out) |
-| ArtObjects\[id\] | HitBase | Timeswitch | When it stop winding back in (hits the base) |
+| ArtObject\[id\] | RotatedRight | PivotHandle | When it's been rotated right |
+| ArtObject\[id\] | RotatedLeft | PivotHandle | When it's been rotated left |
+| Script\[id\] | Complete |   | When the script timeouts or terminates |
+| Group\[id\] | Sucked | SuckBlock | When it's completely inside its host volume |
+| Group\[id\] | Explode | PushSwitch, ExploSwitch, PushSwitchPermanent | When a bomb explodes near this switch |
+| Group\[id\] | Push | PushSwitch, ExploSwitch, PushSwitchPermanent | When this switch is pushed completely |
+| Group\[id\] | Lift | PushSwitch, ExploSwitch, PushSwitchPermanent | When this switch is lifted back up |
+| ArtObject\[id\] | ScrewedOut | Timeswitch | When the screw minimally sticks out from the base (it's been screwed out) |
+| ArtObject\[id\] | HitBase | Timeswitch | When it stop winding back in (hits the base) |
 | Tombstone | MoreThanOneAligned |   | When more than one tombstones are aligned |
-| ArtObjects\[id\] | Screwed | Valve, BoltHandle | When it's unscrewed |
-| ArtObjects\[id\] | Unscrewed | Valve, BoltHandle | When it's screwed in |
-| Volumes\[id\] | Enter |   | When the player enters this volume |
-| Volumes\[id\] | Exit |   | When the player exits this volume |
-| Volumes\[id\] | GoHigher |   | When the player goes higher than the volume/height-marker |
-| Volumes\[id\] | GoLower |   | When the player goes lower than the volume/height-marker |
-| Volumes\[id\] | CodeAccepted |   | If the input code was accepted |
+| ArtObject\[id\] | Screwed | Valve, BoltHandle | When it's unscrewed |
+| ArtObject\[id\] | Unscrewed | Valve, BoltHandle | When it's screwed in |
+| Volume\[id\] | Enter |   | When the player enters this volume |
+| Volume\[id\] | Exit |   | When the player exits this volume |
+| Volume\[id\] | GoHigher |   | When the player goes higher than the volume/height-marker |
+| Volume\[id\] | GoLower |   | When the player goes lower than the volume/height-marker |
+| Volume\[id\] | CodeAccepted |   | If the input code was accepted |
 
 ### Properties
 
-| EntityIdentifier | Type | PropertyName | RestrictedToActorTypes | Description |
+| EntityIdentifier | PropertyName | Type | RestrictedToActorTypes | Description |
 |---|
-| Game | bool | IsScrollOpen |   | Is there an open scroll? |
-| Game | String | GetGlobalState |   |  |
-| Game | String | GetLevelState |   |  |
-| Game | bool | IsMapQrResolved |   |  |
-| Game | bool | IsSewerQrResolved |   |  |
-| Game | bool | IsZuQrResolved |   |  |
-| Gomez | int | CollectedCubes |   | The number of small golden cubes the player's collected |
-| Gomez | bool | Grounded |   | Is he standing on solid ground? |
-| Gomez | bool | CanControl |   | Is Gomez controllable by the player? |
-| Gomez | bool | Visible |   | Is Gomez visible? |
-| Gomez | bool | IsOnLadder |   |  |
-| Gomez | bool | Alive |   |  |
-| Gomez | int | CollectedSplits |   |  |
-| Level | bool | FirstVisit |   |  |
-| Owl | int | OwlsCollected |   | Number of owls collected up to now |
-| ArtObjects\[id\] | int | Turns | PivotHandle | Gets the number of turns it's relative to the original state |
-| Groups\[id\] | bool | IsSucked | SuckBlock |  |
-| Time | int | Hour |   | The hour of day (0-23) |
-| Tombstone | int | AlignedCount |   |  |
-| Volumes\[id\] | bool | RegisterNeeded |   |  |
-| Volumes\[id\] | bool | GomezInside |   | Tests if Gomez is inside a certain volume |
-| Volumes\[id\] | bool | IsEnabled |   | Tests if volume is enabled |
+| Game | IsScrollOpen | bool |   | Is there an open scroll? |
+| Game | GetGlobalState | String |   |  |
+| Game | GetLevelState | String |   |  |
+| Game | IsMapQrResolved | bool |   |  |
+| Game | IsSewerQrResolved | bool |   |  |
+| Game | IsZuQrResolved | bool |   |  |
+| Gomez | CollectedCubes | int |   | The number of small golden cubes the player's collected |
+| Gomez | Grounded | bool |   | Is he standing on solid ground? |
+| Gomez | CanControl | bool |   | Is Gomez controllable by the player? |
+| Gomez | Visible | bool |   | Is Gomez visible? |
+| Gomez | IsOnLadder | bool |   |  |
+| Gomez | Alive | bool |   |  |
+| Gomez | CollectedSplits | int |   |  |
+| Level | FirstVisit | bool |   |  |
+| Owl | OwlsCollected | int |   | Number of owls collected up to now |
+| ArtObject\[id\] | Turns | int | PivotHandle | Gets the number of turns it's relative to the original state |
+| Group\[id\] | IsSucked | bool | SuckBlock |  |
+| Time | Hour | int |   | The hour of day (0-23) |
+| Tombstone | AlignedCount | int |   |  |
+| Volume\[id\] | RegisterNeeded | bool |   |  |
+| Volume\[id\] | GomezInside | bool |   | Tests if Gomez is inside a certain volume |
+| Volume\[id\] | IsEnabled | bool |   | Tests if volume is enabled |
 
 ### Operations
 
-```note
-If an operation has less than the required amount of parameters, the remaining parameters will be set to the default value for that type. (i.e., Strings will be empty strings, numbers will be 0, bool will be false, etc.)
-```
-
 | EntityIdentifier | ActionName | Parameters | RestrictedToActorTypes | Description |
 |---|
-| ArtObjects\[id\] | SetRotation | float x, float y, float z |   | Replaces the rotation angles (in degrees) |
-| ArtObjects\[id\] | Rotate | float dX, float dY, float dZ |   | Rotates over time (in rotations per second) |
-| ArtObjects\[id\] | RotateIncrementally | float initPitch, float initYaw, float initRoll, float secondsUntilDouble |   | Rotates incrementally over time (in time before doubling) |
-| ArtObjects\[id\] | TiltOnVertex | float durationSeconds |   | Tilts the art object on its bottom vertex |
-| ArtObjects\[id\] | Move | float dX, float dY, float dZ, float easeInFor, float easeOutAfter, float easeOutFor |   | Moves incrementally over time (in units per second) |
-| ArtObjects\[id\] | HoverFloat | float height, float cyclesPerSecond |   | Makes the object hover vertically |
-| ArtObjects\[id\] | StartEldersSequence |  |   | Does the whole hex-room sequence |
-| ArtObjects\[id\] | MoveNutToEnd |  |   | Moves a nut&bolt to its end |
-| ArtObjects\[id\] | MoveNutToHeight | float height |   | Moves a nut&bolt to a certain height, and gradually |
-| ArtObjects\[id\] | GlitchOut | bool permanent, String spawnedActor |   | Glitches and removes art object (and associated group if any) |
-| ArtObjects\[id\] | BeamGomez |  |   | For the hexahedron |
-| ArtObjects\[id\] | Pulse | String textureName |   | For the glow blocks |
-| ArtObjects\[id\] | Say | String text, bool zuish |   | For the zuish speech |
-| BackgroundPlanes\[id\] | Open |  | BigWaterfall |  |
+| ArtObject\[id\] | SetRotation | float x, float y, float z |   | Replaces the rotation angles (in degrees) |
+| ArtObject\[id\] | Rotate | float dX, float dY, float dZ |   | Rotates over time (in rotations per second) |
+| ArtObject\[id\] | RotateIncrementally | float initPitch, float initYaw, float initRoll, float secondsUntilDouble |   | Rotates incrementally over time (in time before doubling) |
+| ArtObject\[id\] | TiltOnVertex | float durationSeconds |   | Tilts the art object on its bottom vertex |
+| ArtObject\[id\] | Move | float dX, float dY, float dZ, float easeInFor, float easeOutAfter, float easeOutFor |   | Moves incrementally over time (in units per second) |
+| ArtObject\[id\] | HoverFloat | float height, float cyclesPerSecond |   | Makes the object hover vertically |
+| ArtObject\[id\] | StartEldersSequence |  |   | Does the whole hex-room sequence |
+| ArtObject\[id\] | MoveNutToEnd |  |   | Moves a nut&bolt to its end |
+| ArtObject\[id\] | MoveNutToHeight | float height |   | Moves a nut&bolt to a certain height, and gradually |
+| ArtObject\[id\] | GlitchOut | bool permanent, String spawnedActor |   | Glitches and removes art object (and associated group if any) |
+| ArtObject\[id\] | BeamGomez |  |   | For the hexahedron |
+| ArtObject\[id\] | Pulse | String textureName |   | For the glow blocks |
+| ArtObject\[id\] | Say | String text, bool zuish |   | For the zuish speech |
+| Plane\[id\] | Open |  | BigWaterfall |  |
 | Camera | SetPixelsPerTrixel | int triles |   | Set the number of pixels per trixel (default is 4) |
 | Camera | SetCanRotate | bool canRotate |   | Changes whether Gomez can rotate the camera |
 | Camera | Rotate | int distance |   | Forces camera rotation, left (-1 to -3) or right (1 to 3) |
@@ -143,15 +139,15 @@ If an operation has less than the required amount of parameters, the remaining p
 | Gomez | AllowEnterTunnel |  |   | Allows Gomez to enter that tunnel/passageway by pressing up |
 | Gomez | SetFezVisible | bool visible |   | Shows/Hides gomez's fez |
 | Gomez | SetGomezVisible | bool visible |   | Shows/Hides gomez |
-| Groups\[id\] | StartPath | bool backwards |   | Starts the group's moving path (must be set 'Needs Trigger') |
-| Groups\[id\] | RunPathOnce | bool backwards |   | Runs the group's moving path, but only once (must be set 'Needs Trigger') |
-| Groups\[id\] | RunSingleSegment | bool backwards |   | Runs a single segment of the group's moving path (must be set 'Needs Trigger') |
-| Groups\[id\] | Stop |  |   | Stops or pauses a moving group |
-| Groups\[id\] | Move | float dX, float dY, float dZ |   | Moves a group incrementally over time (units per second) |
-| Groups\[id\] | SetEnabled | bool enabled |   | Enables or disables all of a group's triles |
-| Groups\[id\] | MovePathToEnd |  |   | Moves a moving group to the end of its path |
-| Groups\[id\] | GlitchyDespawn | bool permanent |   | Moves a moving group to the end of its path |
-| ArtObjects\[id\] | SetEnabled | bool enabled | LaserEmitter | Starts or stops an emitter |
+| Group\[id\] | StartPath | bool backwards |   | Starts the group's moving path (must be set 'Needs Trigger') |
+| Group\[id\] | RunPathOnce | bool backwards |   | Runs the group's moving path, but only once (must be set 'Needs Trigger') |
+| Group\[id\] | RunSingleSegment | bool backwards |   | Runs a single segment of the group's moving path (must be set 'Needs Trigger') |
+| Group\[id\] | Stop |  |   | Stops or pauses a moving group |
+| Group\[id\] | Move | float dX, float dY, float dZ |   | Moves a group incrementally over time (units per second) |
+| Group\[id\] | SetEnabled | bool enabled |   | Enables or disables all of a group's triles |
+| Group\[id\] | MovePathToEnd |  |   | Moves a moving group to the end of its path |
+| Group\[id\] | GlitchyDespawn | bool permanent |   | Moves a moving group to the end of its path |
+| ArtObject\[id\] | SetEnabled | bool enabled | LaserEmitter | Starts or stops an emitter |
 | Level | AllowPipeChangeLevel | String levelName |   | Changes the level MARIO-STYLE |
 | Level | ChangeLevel | String levelName, bool asDoor, bool spin, bool trialEnding |   | Changes the level; if 'asDoor' is true, the level change occurs if gomez enters the door, else it's done immediately |
 | Level | ReturnToLastLevel | bool asDoor, bool spin |   | Returns to the last accessed level; if 'asDoor' is true, the level change occurs if gomez enters the door, else it's done immediately |
@@ -164,18 +160,18 @@ If an operation has less than the required amount of parameters, the remaining p
 | Level | ResolvePuzzle |  |   | Marks a puzzle as solved, and plays the chime |
 | Level | ResolvePuzzleSilent |  |   | Silently resolves a puzzle |
 | Level | ResolvePuzzleSoundOnly |  |   |  |
-| NonPlayerCharacters\[id\] | Say | String line, String customSound, String customAnimation |   | Makes the NPC say a custom text line |
-| NonPlayerCharacters\[id\] | CarryGeezerLetter |  |   | CarryGeezerLetter |
-| Paths\[id\] | Start | bool inTransition, bool outTransition |   | Applies the whole path to the camera |
-| ArtObjects\[id\] | SetEnabled | bool enabled | PivotHandle | Enables or disables a pivot handle's rotatability |
-| ArtObjects\[id\] | RotateTo | int turns | PivotHandle | Enables or disables a pivot handle's rotatability |
-| BackgroundPlanes\[id\] | FadeIn | float seconds |   |  |
-| BackgroundPlanes\[id\] | FadeOut | float seconds |   |  |
-| BackgroundPlanes\[id\] | Flicker | float factor |   |  |
-| Groups\[id\] | Rotate | bool clockwise, int turns | RotatingGroup |  |
-| Groups\[id\] | SetEnabled | bool enabled | RotatingGroup |  |
-| Scripts\[id\] | SetEnabled | bool enabled |   | Enables or disables a script |
-| Scripts\[id\] | Evaluate |  |   | Evaluates a script |
+| Npc\[id\] | Say | String line, String customSound, String customAnimation |   | Makes the NPC say a custom text line |
+| Npc\[id\] | CarryGeezerLetter |  |   | CarryGeezerLetter |
+| Path\[id\] | Start | bool inTransition, bool outTransition |   | Applies the whole path to the camera |
+| ArtObject\[id\] | SetEnabled | bool enabled | PivotHandle | Enables or disables a pivot handle's rotatability |
+| ArtObject\[id\] | RotateTo | int turns | PivotHandle | Enables or disables a pivot handle's rotatability |
+| Plane\[id\] | FadeIn | float seconds |   |  |
+| Plane\[id\] | FadeOut | float seconds |   |  |
+| Plane\[id\] | Flicker | float factor |   |  |
+| Group\[id\] | Rotate | bool clockwise, int turns | RotatingGroup |  |
+| Group\[id\] | SetEnabled | bool enabled | RotatingGroup |  |
+| Script\[id\] | SetEnabled | bool enabled |   | Enables or disables a script |
+| Script\[id\] | Evaluate |  |   | Evaluates a script |
 | Sound | Play | String soundName |   | Plays a sound by its filename |
 | Sound | PlayNext | String soundPrefix |   | Plays a sound by its prefix and an auto-incremented index (starts at 1) |
 | Sound | SetMusicVolume | float volume |   | Changes the volume of BGM |
@@ -188,21 +184,20 @@ If an operation has less than the required amount of parameters, the remaining p
 | Sound | FadeMusicOut | float overSeconds |   | Fades the music out |
 | Sound | FadeMusicTo | float to, float overSeconds |   |  |
 | Sound | ChangePhases | String trackName, bool dawn, bool day, bool dusk, bool night |   |  |
-| ArtObjects\[id\] | SetEnabled | bool enabled | SpinBlock | Enables or disables a spinblock (which ceases or resumes its spinning) |
-| Groups\[id\] | Activate |  | PushSwitch, ExploSwitch, PushSwitchPermanent | Activates this switch |
-| Groups\[id\] | ChangeTrile | int newTrileId | PushSwitch, ExploSwitch, PushSwitchPermanent | Changes the visual of this switch's triles |
+| ArtObject\[id\] | SetEnabled | bool enabled | SpinBlock | Enables or disables a spinblock (which ceases or resumes its spinning) |
+| Group\[id\] | Activate |  | PushSwitch, ExploSwitch, PushSwitchPermanent | Activates this switch |
+| Group\[id\] | ChangeTrile | int newTrileId | PushSwitch, ExploSwitch, PushSwitchPermanent | Changes the visual of this switch's triles |
 | Time | SetHour | int hour, bool immediate |   | Changes the hour of day (0-23), gradually or immediately |
 | Time | SetTimeFactor | int factor |   | Sets the speed of time passage (0 = paused) |
 | Time | IncrementTimeFactor | float secondsUntilDouble |   | Increments the time factor (specifying how much time before it doubles up) |
 | Tombstone | UpdateAlignCount | int count |   |  |
-| ArtObjects\[id\] | SetEnabled | bool enabled | Valve, BoltHandle | Enables or disables a valve's rotatability |
-| Volumes\[id\] | FocusCamera | int pixelsPerTrixel, bool immediate |   | Center the camera view on this volume; set a value <= 0 to pixelsPerTrixels if you don't want to alter it. Immediate doesn't wait for an end-trigger |
-| Volumes\[id\] | SetEnabled | bool enabled, bool permanent |   | Disables or enables this volume |
-| Volumes\[id\] | SlowFocusOn | float duration, float trixPerPix |   | Slowly focuses camera on a volume |
-| Volumes\[id\] | LoadHexahedronAt | String toLevel |   | Loads the hex in the middle of a specified volume, and warp to the specified level afterwards |
-| Volumes\[id\] | PlaySoundAt | String soundName, bool loop, float initialDelay, float perLoopDelay, bool directional, float pitchVariation |   | Plays a sound on the specified volume, looped or not, directional or not (follows volume's enabled directions) |
-| Volumes\[id\] | MoveDotWithCamera |  |   | Moves Dot and the camera to the specified volume's center |
-| Volumes\[id\] | FocusWithPan | int pixelsPerTrixel, float verticalPan, float horizontalPan |   | Focuses the camera with panning support |
-| Volumes\[id\] | SpawnTrileAt | String actorTypeName |   | Spawns a treasure trile at this volume's location |
-| ArtObjects\[id\] | SetEnabled | bool enabled | WarpGate |  |
-
+| ArtObject\[id\] | SetEnabled | bool enabled | Valve, BoltHandle | Enables or disables a valve's rotatability |
+| Volume\[id\] | FocusCamera | int pixelsPerTrixel, bool immediate |   | Center the camera view on this volume; set a value <= 0 to pixelsPerTrixels if you don't want to alter it. Immediate doesn't wait for an end-trigger |
+| Volume\[id\] | SetEnabled | bool enabled, bool permanent |   | Disables or enables this volume |
+| Volume\[id\] | SlowFocusOn | float duration, float trixPerPix |   | Slowly focuses camera on a volume |
+| Volume\[id\] | LoadHexahedronAt | String toLevel |   | Loads the hex in the middle of a specified volume, and warp to the specified level afterwards |
+| Volume\[id\] | PlaySoundAt | String soundName, bool loop, float initialDelay, float perLoopDelay, bool directional, float pitchVariation |   | Plays a sound on the specified volume, looped or not, directional or not (follows volume's enabled directions) |
+| Volume\[id\] | MoveDotWithCamera |  |   | Moves Dot and the camera to the specified volume's center |
+| Volume\[id\] | FocusWithPan | int pixelsPerTrixel, float verticalPan, float horizontalPan |   | Focuses the camera with panning support |
+| Volume\[id\] | SpawnTrileAt | String actorTypeName |   | Spawns a treasure trile at this volume's location |
+| ArtObject\[id\] | SetEnabled | bool enabled | WarpGate |  |
