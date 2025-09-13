@@ -10,6 +10,7 @@ permalink: /:categories/:title
 # identical? fork 1: bxthomas/jekyll-rtd-theme
 # identical? fork 2: amkherad/jekyll-rtd-theme
 remote_theme: bxthomas/jekyll-rtd-theme
+debug: true
 
 toc: true
 
