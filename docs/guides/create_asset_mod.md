@@ -22,7 +22,7 @@ The mice in Villageville keep running away from Gomez, but he's friend-shaped, s
 
 The back wall of Gomez's room is a bit too empty. Let's spice it up by modifying `background planes/gomez_house_c.png` and add some cool decoration.
 
-The sound when you enter a door doesn't communicate how great of an achievement it is. Let's replace it with something more happy like the happy sound when Gomez gets his fez. Replace `sounds/gomez/enterdoor.wav` with `sounds/collects/collectfez.wav`. Make sure to keep the name `logozoom.wav` since that will tell HAT what asset to replace. One thing of note though is that the game expects sounds to be a certain length and will just clip the audio if it's longer.
+The sound when you enter a door doesn't communicate how great of an achievement it is. Let's replace it with something more happy like the happy sound when Gomez gets his fez. Replace `sounds/gomez/enterdoor.wav` with `sounds/collects/collectfez.wav`. Make sure to keep the name `enterdoor.wav` since that will tell HAT what asset to replace.
 
 ## Making your asset mod
 
@@ -66,4 +66,8 @@ Now copy this folder over to the `Mods/` folder in your FEZ install directory (d
 
 ## Sharing your asset mod
 
-Create a github repository for your mod and commit your folder to it. Give it a `README.md` to tell others what it's about and once you're done. Then drop a message in the modding section of the [Fez Community Discord](https://discord.gg/wwVB86HhJz) to share your work with others.
+Create a github repository for your mod and commit your folder to it. Give it a `README.md` to tell others what it's about.
+
+Tag your commit with a release number matching what's in `Metadata.xml`. Make a new release from that tag, add the version number in the title and some information on changes if this is not the first release. Then add a zip file of your mod folder (e.g. `ExampleAssetMod.zip`) to the `Assets` section of the release page and publish it.
+
+Once all that's done, drop a message in the modding section of the [Fez Community Discord](https://discord.gg/wwVB86HhJz) to share your work with others.
