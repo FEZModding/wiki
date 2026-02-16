@@ -40,7 +40,7 @@ Top-level object stored in `.fezts.json` JSON file.
 |SeeThrough|Boolean|If true, the camera can render whatever is behind the trile through its transparent spots.|
 |Thin|Boolean|Like Immaterial, Gomez can pop through these triles, even if he is behind them. Note this property otherwise does not affect collision.|
 |ForceHugging|Boolean|If true, the trile will "hug" (snap to) the nearest trile.|
-|Faces|[CollisionType Dictionary](#collisiontype-dictionary)|Defines how Gomez should interfact with each face of a trile.|
+|Faces|[CollisionType Dictionary](#collisiontype-dictionary)|Defines how Gomez should interact with each face of a trile.|
 |Type|[ActorType](#actortype)|Defines a type of the trile, which can give it special properties (mushroom bounce, door unlocking, bomb, etc.).|
 |Face|[FaceOrientation](#faceorientation)|Initial facing direction for the trile.|
 |SurfaceType|[SurfaceType](#surfacetype)|Determines the footsteps sound effect to play when the player lands on this trile.|
@@ -76,7 +76,7 @@ All enums are stored as PascalCamelCase string parameters.
 |        TopOnly   | for fall-through/climbable platforms |
 |        None      | no-collide triles |
 |        Immaterial| no-collide triles that DON’T make Gomez go in front of them. Mostly unused; use CollisionType `None` and set `Trile.Immaterial` instead.|
-|TopNoStraightLedge| for platforms that Gomez cannot grab onto the ledge, and cannot fall through, but can stand on. (e.g., the shelves in the kitchen)|
+|TopNoStraightLedge| for platforms that Gomez cannot grab onto the ledge, and cannot fall through, but can stand on. (e.g., the shelves in the kitchen, the platforms in `zu_house_scaffolding`) <br />Seems to be mainly to prevent the player from clipping through the walls of interiors|
 
 ### ActorType
 
