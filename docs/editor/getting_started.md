@@ -76,3 +76,4 @@ There are special cases described on separate pages:
 
 - [Phil](/wiki/editor/diorama) - Export levels as GLTF scenes
 - [FEXFX](/wiki/editor/shaders) - PC shaders (`.fxc`)
+- [Scripting](/wiki/editor/scripting) - Level scripting
