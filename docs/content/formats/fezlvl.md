@@ -243,7 +243,7 @@ Structure defining Dot dialogue.
 
 |Property name|Type|Description|
 |-|-|-|
-|ResourceText|String|The key to get the localized text from the FEZDATA file.|
+|ResourceText|String|The key used to retrieve localized text from a FEZTXT file.|
 |Grouped|Boolean|Behaviour currently unknown.|
 
 ### CodeInput
@@ -436,7 +436,7 @@ Structure defining a speech line and its additional attributes.
 
 |Property name|Type|Description|
 |-|-|-|
-|Text|String|Language identifier of a text which is used. See also: [fezdata's LanguageResource](./fezdata#languageresource).|
+|Text|String|Identifier of the localized text to use. See also: [FEZTXT text entries](./feztxt#text-entries).|
 |OverrideContent|[NpcActionContent](#npcactioncontent)|Behaviour currently unknown.|
 
 ### NpcActionContent
