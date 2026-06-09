@@ -2,7 +2,7 @@
 sort: 15
 ---
 
-![](/docs/assets/images/editor/shaders.png)
+![](/wiki/assets/images/editor/shaders.png)
 
 *Hey, what could possibly go wrong here?*
 
