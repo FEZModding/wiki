@@ -61,7 +61,7 @@ Here is a list of editors and the assets each of them edits:
 - [Chris](/wiki/editor/triles_art_objects) - Trile Sets (`.fezts.glb`) and Art Objects (`.fezao.glb`)
 - [Luke](/wiki/editor/skies) - Skies (`.fezsky.json`)
 - [Jade](/wiki/editor/world_map) - World Map (`.fezmap.json`)
-- [Mu](/wiki/editor/npcs) - NPC Metadata (`.feznpc.json`)
+- [Mu](/wiki/editor/npc_metadata) - NPC Metadata (`.feznpc.json`)
 - [Diez](/wiki/editor/tracked_songs) - Tracked Songs (`.fezsong.json`)
 - [Zu](/wiki/editor/sprite_fonts) - Sprite Fonts (`.fezfont.json`)
 - [Po](/wiki/editor/localization) - Localization Files (`.feztxt.json`)
