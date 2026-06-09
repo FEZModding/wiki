@@ -25,7 +25,7 @@ From here you can start working with assets depending on your goal:
 
 4. **Extract assets and open them** - select all 4 PAK files from the `Content` folder, then choose a destination folder. The editor will extract all files and automatically open the directory for editing.
 
-5. **Open SaveSlot file to edit** - select the `FEZ` folder in the application data directory (the editor will open it for you).
+5. **Open SaveSlot file to edit** - select the `FEZ` folder in the application data directory (the editor will open it for you). Refer to the [Save Slots](/wiki/editor/save_slots) page.
 
 If you're new to this, go with Option 4.
 
