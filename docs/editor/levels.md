@@ -21,7 +21,13 @@ The level editor looks like this:
 
 ## Creating a Level
 
-When you create a new level, it will contain the following:
+When you create a new level, the editor will ask you to pick a trile set to use by the level. 
+
+```note
+Due to inability to map triles from one trileset to another, switching trile sets will not be possible through an editor once a level is created.
+```
+
+Newly created level will contain the following:
 
 ![](/wiki/assets/images/editor/eddy_fresh.png)
 
@@ -144,7 +150,21 @@ You can press `Delete` to remove the selected elements or path waypoints. When p
 
 Triles are grid-based blocks that form most level geometry and provide its main collision.
 
-Select a trile in the Asset Browser, then use **Paint** to place it. Triles normally snap to integer emplacements, but their **Position** property can offset them from the grid.
+Select a trile in the Asset Browser, then use **Paint** to place it. Triles normally snap to integer emplacements, but they can be offset using either **Position** property or **Translate** tool when trile is selected.
+
+By default, using **Paint** tool will paint triles in a place of currently hovered triles, essentially replacing them. This can be changed by holding one of modifier keys - holding Shift key will paint trile on top of currently hovered triles, while holding Control will delete currently hovered trile.
+
+When trile is painted, its orientation is determined based on one of three rotation modes that can be switched with an R key:
+
+- **Front/Back/Left/Right (Scroll)** - orientation is fixed, and controlled by scrolling a mouse wheel.
+- **Random** - every placed trile has a randomized orientation.
+- **Copy** - orientation is copied over from currently hovered trile.
+
+If any faces are currently selected, **Paint** tool will act upon all of them according to currently held modifier keys. Every trile placed this way will have its rotation individually determined. This can allow easy orientation randomization of many triles at once.
+
+Other tools can act upon selected triles as well. **Scale** tool allows to extrude triles along selected faces, while **Rotate** tool allows to manipulate orientation of selected triles.
+
+#### Properties
 
 The Trile properties include its emplacement, position, rotation, contained trile, actor settings, and instance-specific data:
 
@@ -262,23 +282,27 @@ You can enable **Collision Map** in View Options to display the collision genera
 
 Use it to find missing collision, unintended walls, and incorrect one-way surfaces. Collision types are defined by the triles in the selected trile set.
 
-## Testing with FEZUG
+## Testing a level
 
 ```warning
-Due to the auto-save system, your currently selected save file will store your level state data and *may* crash the vanilla game. To avoid this, create an empty save file or back up an existing one!
+Due to the auto-save system, your currently selected save file will store your level state data and *may* cause a crash if attempted to load in unmodded game or level has been moved/deleted. To avoid this, create an empty save file or back up an existing one!
 ```
 
-To test a level, you should use the [FEZUG mod](https://github.com/FEZModding/FEZUG) with [HAT modloader](/wiki/guides/hat_install) installed:
+In order to quickly test the level, it is recommended to use the [FEZUG mod](https://github.com/FEZModding/FEZUG) with [HAT modloader](/wiki/guides/hat_install) installed and follow these steps:
 
-1. Create the `Mods/FEZUG/Assets/Levels/` subfolder.
-2. Copy your `.fezlvl.json` level file into that folder.
+1. Create new asset mod using [this guide](/wiki/guides/create_asset_mod).
+2. Create `Level` directory within your mod's `Assets` directory and copy your `.fezlvl.json` level file into that folder.
 3. Start the HAT-patched game.
 4. Hit the `~` key to bring a console and type `warp <YOUR_LEVEL_NAME>` command.
 5. Enjoy and test the level.
 
-```tip
-Once you've made changes to the level, simply copy the level file into the mod folder. HAT will automatically update the level with your changes without requiring you to restart the game.
+```hint
+You can use **Open mod assets directory** option in the welcome screen to open the `Assets` directory of your mod to avoid copying over the files.
 ```
+
+When planning to create a mod with a custom level, it is recommended to create a custom world mod (introduced in HAT v2.1.0) and test levels by creating a new save file in created world. You can learn more about it in [this guide](/wiki/guides/create_world_mod).
+
+HAT also supports level hot-reload. One the game detects any changes in the level file, it will be automatically reloaded.
 
 ```note
 The game will not automatically display your level on the world map. To update it, refer to the [World Map](/wiki/editor/world_map) page.
