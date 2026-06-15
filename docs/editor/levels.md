@@ -262,6 +262,28 @@ You can enable **Collision Map** in View Options to display the collision genera
 
 Use it to find missing collision, unintended walls, and incorrect one-way surfaces. Collision types are defined by the triles in the selected trile set.
 
+## Testing with FEZUG
+
+```warning
+Due to the auto-save system, your currently selected save file will store your level state data and *may* crash the vanilla game. To avoid this, create an empty save file or back up an existing one!
+```
+
+To test a level, you should use the [FEZUG mod](https://github.com/FEZModding/FEZUG) with [HAT modloader](/wiki/guides/hat_install) installed:
+
+1. Create the `Mods/FEZUG/Assets/Levels/` subfolder.
+2. Copy your `.fezlvl.json` level file into that folder.
+3. Start the HAT-patched game.
+4. Hit the `~` key to bring a console and type `warp <YOUR_LEVEL_NAME>` command.
+5. Enjoy and test the level.
+
+```tip
+Once you've made changes to the level, simply copy the level file into the mod folder. HAT will automatically update the level with your changes without requiring you to restart the game.
+```
+
+```note
+The game will not automatically display your level on the world map. To update it, refer to the [World Map](/wiki/editor/world_map) page.
+```
+
 ## Reference
 
 A detailed description of the level properties is available in the [FEZLVL format reference](/wiki/content/formats/fezlvl).
