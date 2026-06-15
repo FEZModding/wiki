@@ -65,7 +65,7 @@ The previewer does not edit the animation frames directly. Use Aseprite or anoth
 
 Background planes can reference either static or animated textures.
 
-When a background plane uses an animated texture, Eddy marks the plane as `Animated` in its **Properties** window and plays the animation in the level viewport:
+When a background plane uses an animated texture, [Eddy](/wiki/editor/levels) marks the plane as `Animated` in its **Properties** window and plays the animation in the level viewport:
 
 ![](/wiki/assets/images/editor/eddy_background_plane_properties.png)
 
