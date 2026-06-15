@@ -19,15 +19,17 @@ From here you can start working with assets depending on your goal:
 
 1. **Open PAK file** - selects one of the PAK files. In this mode you cannot edit assets.
 
-2. **Open mod assets directory** - select the `Assets` folder inside your mod directory.
+2. **Open mod assets directory** - select the `Assets` folder inside your mod directory. Additional read-only asset resources can be picked, allowing assets in mod directory to reference them.
 
 3. **Open assets directory** - if you have assets extracted by FEZEditor or FEZRepacker, select the folder.
 
-4. **Extract assets and open them** - select all 4 PAK files from the `Content` folder, then choose a destination folder. The editor will extract all files and automatically open the directory for editing.
+4. **Extract assets and open them** - select PAK archive(s), then choose a destination folder. The editor will extract all files and automatically open the directory for editing.
 
 5. **Open SaveSlot file to edit** - select the `FEZ` folder in the application data directory (the editor will open it for you). Refer to the [Save Slots](/wiki/editor/save_slots) page.
 
-If you're new to this, go with Option 4.
+It is recommended to start with Option 4 as a way to familiarize with the editor - select all 4 PAK files from the `Content` folder (`Essentials.pak`, `Other.pak`, `Music.pak` and `Updates.pak`) and tinker around the original game assets.
+
+Once you're familiarized with the editor and want to create your own mod, it is recommended to use Option 2 instead.
 
 ## Interface Overview
 
