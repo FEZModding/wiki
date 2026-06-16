@@ -1,8 +1,29 @@
 # HAT mod structure
 
-On startup, HAT iterates through the `Mods` directory in the main game's directory in search for valid mods. Every directory and `.zip` archive within `Mods` directory containing `Metadata.xml` file at its root is considered to be a valid mod. The name of the directory/archive is used only by the ignore/priority lists and doesn't have any other internal usage.
+HAT loads mods from the `Mods` directory in the FEZ install directory. A mod can be either a directory or a `.zip` archive. In both cases, `Metadata.xml` must be placed at the root of the mod.
 
-The `Metadata.xml` file should have the following structure:
+The directory or archive name is not the mod identifier. HAT uses it only for `ignorelist.txt` and `prioritylist.txt`.
+
+## Basic layout
+
+A simple mod directory looks like this:
+
+```text
+├── ExampleMod/
+│   ├── Metadata.xml
+│   ├── ExampleMod.dll
+│   ├── Assets/
+```
+
+Only `Metadata.xml` is required for HAT to recognize the mod. The other files depend on the mod type:
+
+1. Asset mods use `Assets/` or `Assets.pak`.
+2. Code mods use a managed `.dll` file referenced by `LibraryName`.
+3. Mixed mods can include both code and assets.
+
+## Metadata
+
+`Metadata.xml` describes the mod and tells HAT what to load.
 
 ```xml
 <Metadata>
@@ -10,40 +31,99 @@ The `Metadata.xml` file should have the following structure:
    <Description>Short description of your mod.</Description>
    <Author>YourName</Author>
    <Version>1.0</Version>
-   <LibraryName></LibraryName>
+   <LibraryName>YourModName.dll</LibraryName>
+   <Entrypoint>YourModName.YourModComponent</Entrypoint>
    <Dependencies>
-      <DependencyInfo Name="HAT" MinimumVersion="1.0"/>
+      <DependencyInfo Name="HAT" MinimumVersion="2.0"/>
    </Dependencies>
 </Metadata>
 ```
 
-`Name` tag is required and is treated as an unique case-sensitive identifier of your mod - mod loader will load only one mod with the same name (it'll choose the one with the most recent version). It doesn't have to match the name of the directory/archive the mod is placed in.
+`Name` is required. It is the mod's unique identifier and is compared case-sensitively. If multiple loaded mods use the same name, HAT keeps the newest version.
 
-`Version` tag is also required. Mod loader compares two version strings by putting them in an alphanumberical order, however, each number is treated as a separate token, which order is determined by numberical value (this means `1.2beta` will be treated as older version to `1.11`).
+`Version` is required. HAT parses it as a .NET `Version`, so use numeric versions such as `1.0`, `1.2.3`, or `2.0.0.0`.
 
-`LibraryName` is used to determine a DLL library with C# assembly the mod loader will load. The library should end with `.dll` extension and should be placed in your mod's directory. This tag is optional, as your mod doesn't have to add any new logic.
+`Description` and `Author` are informational and are shown in the mods menu.
 
-`Dependencies` is a list of `DependencyInfo` tags. If your mod requires a specific version of HAT mod loader or relies on another mod, your can use these tags to prevent mod loader from loading this mod if given dependencies aren't present. It's entirely optional.
+`LibraryName` is optional. If set, it must point to a `.dll` file at the root of the mod. HAT loads that file as the mod's managed assembly.
 
-All other fields (`Description`, `Author`) are purely informational and will be displayed in the mods list menu.
+`Entrypoint` is optional, but recommended for code mods. It must be the fully qualified name of a public `GameComponent` class in the managed assembly. If it is omitted, HAT uses the backwards-compatible behavior and loads every public, non-abstract `GameComponent` class in the assembly.
 
-## Asset mod
+`Dependencies` is optional, but code mods should declare a HAT dependency. If the dependency is missing, HAT assumes `HAT` version `1.0` for compatibility with older mods. For other mods, add a `DependencyInfo` entry with the dependency mod's `Name` and, if needed, `MinimumVersion`.
 
-HAT will attempt to load all files recursively from `Assets` subdirectory of a mod (if one exists) and try to use them as in-game assets. A path relative to the `Assets` subdirectory will be used to identify specific asset. If a path and a filename matches an asset already existing in the game (in any of the `.pak` asset packages) or in any previously loaded mod, it will be overwritten.
+## Native Dependencies
 
-By default, HAT expects the files to be raw asset files (XNB, OGG or FXC files) and will load them as such. However, if any of the files have matching asset formats (see 
-[FEZ Asset Formats](/wiki/content/content_conversion#asset-formats)), it will additionally try to convert the raw bytes with FEZRepacker, providing a more straight-forward modding experience.
+If a code mod depends on native libraries, list them with `NativeDependencies`.
 
-In addition to loading all files within `Assets` subdirectory, HAT will also attempt to load `Assets.pak` archive, and use all assets contained within it. Unlike files in the `Assets` directory, assets contained within the package will not be converted and are expected to be valid raw asset files.
+```xml
+<NativeDependencies>
+   <NativeLibrary Architecture="X86" Platform="Windows">
+      bin\win-x86\example.dll
+   </NativeLibrary>
+   <NativeLibrary Architecture="X64" Platform="Linux">
+      bin\linux-x64\libexample.so
+   </NativeLibrary>
+   <NativeLibrary Architecture="X64" Platform="OSX">
+      bin\osx\libexample.dylib
+   </NativeLibrary>
+</NativeDependencies>
+```
 
-Note that music files (stored by the game in `Music.pak` package) are handled by a separate subsystem in the game, and while it normally expects the OGG music tracks to be located in the root directory, HAT expects them to be located in the `Music` subdirectory of `Assets` directory/package of the mod. For example, in order to replace `villageville\bed` music file, new music file needs to be located at `[Mod directory]/Assets/Music/villageville/bed.ogg`.
+HAT selects the entry that matches the current platform and process architecture, then loads the native library from the mod directory or archive.
 
-## Custom logic mod
+Valid `Platform` values are `Windows`, `Linux`, and `OSX`. Valid `Architecture` values are `X86`, `X64`, `Arm`, and `Arm64`.
 
-Mod loader loads library file given in metadata as an assembly, then attempts to create an instance of every public class inheriting from game's `IGameComponent` interface contained within loaded assembly before game initialization (before any services are created). After the game has been initialized (that is, as soon as all necessary services are initiated), it adds created instances into the list of game's components and initializes them, allowing their `Update` and `Draw` (when using `DrawableGameComponent`) to be properly executed within the game's loop.
+## Asset Mods
 
-For basic project setup, referencing `FEZ.exe` and `FezEngine.dll` should be sufficient (avoid shipping mods with copies of these files by setting "Copy Local" to "False" for both). References to other mods should be automatically resolved, assuming referenced mods have been included in Dependencies section of the mod's metadata. References to any other mod-specific external library should also be resolved by putting the library in the root directory of the mod (next to the mod's library).
+Asset mods place replacement or additional assets under `Assets/`. HAT uses the path relative to `Assets/` as the asset path. If the path matches an existing asset from the game or an earlier loaded mod, the new asset replaces it.
 
-More advanced game logic modifications might need more than an entry point. For that, it is recommended to use either hooks provided by auto-generated `FEZ.Hooks.mm.dll` library included in HAT or MonoMod's detours.
+For example:
 
-For help, you can see an example of already functioning custom logic mod: [FEZUG](https://github.com/Krzyhau/FEZUG).
+```text
+├── ExampleAssetMod/
+│   ├── Metadata.xml
+│   ├── Assets/
+│   │   └── background planes/
+│   │       └── gomez_house_c.png
+```
+
+HAT can load raw asset files such as `.xnb`, `.ogg`, and `.fxc`. It can also convert supported source formats through FEZRepacker.Core before loading them.
+
+HAT also supports an `Assets.pak` file at the root of the mod. Assets inside `Assets.pak` are loaded directly and are expected to already be valid raw assets.
+
+Music is handled specially. To replace a music track, place the `.ogg` file under `Assets/Music/` and keep the path relative to the game's music path. For example, to replace `villageville\bed`, use:
+
+```text
+├── ExampleAssetMod/
+│   ├── Assets/
+│   │   └── Music/
+│   │       └── villageville/
+│   │           └── bed.ogg
+```
+
+For a step-by-step example, see [Creating your first asset HAT mod](/wiki/guides/create_asset_mod).
+
+## Code Mods
+
+Code mods include a managed `.dll` file at the root of the mod and set `LibraryName` in `Metadata.xml`.
+
+HAT loads the assembly, creates the selected `GameComponent` instances, and adds them to the game after the game's services are available. Components can inherit from `GameComponent` for update logic or `DrawableGameComponent` for update and draw logic.
+
+New code mods should use `Entrypoint` to select one public component:
+
+```xml
+<LibraryName>ExampleCodeMod.dll</LibraryName>
+<Entrypoint>ExampleCodeMod.ExampleCodeMod</Entrypoint>
+```
+
+If `Entrypoint` is omitted, HAT loads every public, non-abstract `GameComponent` class from the assembly.
+
+For project setup and a minimal component example, see [Creating your first code HAT mod](/wiki/guides/create_code_mod).
+
+## Dependency and Load Order
+
+HAT resolves mod dependencies before loading mods. If a dependency is missing, has a version older than `MinimumVersion`, or is part of a circular dependency, the dependent mod is not loaded.
+
+Dependencies also affect load order: a dependency is loaded before the mod that requires it. `prioritylist.txt` can influence the order of otherwise unrelated mods. `ignorelist.txt` can exclude directories or `.zip` archives from loading.
+
+Because assets can replace earlier assets, load order matters for mods that edit the same files.
