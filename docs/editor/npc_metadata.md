@@ -24,21 +24,15 @@ You can edit the following properties:
 
 - **Walk Speed**: Controls how quickly the NPC moves while walking.
 
-<video width="100%" controls>
-  <source src="/wiki/assets/images/editor/mu_damn_he_is_fast.mp4" type="video/mp4">
-</video>
+<video src="/wiki/assets/images/editor/mu_damn_he_is_fast.mp4" width="100%" controls></video>
 
 - **Avoids Gomez**: Makes the NPC attempt to move away when Gomez gets too close.
 
-<video width="100%" controls>
-  <source src="/wiki/assets/images/editor/mu_there_is_no_escape_old_man.mp4" type="video/mp4">
-</video>
+<video src="/wiki/assets/images/editor/mu_there_is_no_escape_old_man.mp4" width="100%" controls></video>
 
 - **Sound Path**: Defines a shared NPC sound relative to the `Sounds/` directory. For example:
 
-<video width="100%" controls>
-  <source src="/wiki/assets/images/editor/mu_possessed_by_dot.mp4" type="video/mp4">
-</video>
+<video src="/wiki/assets/images/editor/mu_possessed_by_dot.mp4" width="100%" controls></video>
 
 This example uses this line:
 
