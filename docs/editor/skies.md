@@ -157,5 +157,3 @@ Use **Add** to pick a new layer texture from the current sky folder. Expand a la
 ## Reference
 
 A more detailed description of the properties is available in the [FEZSKY format reference](/wiki/content/formats/fezsky).
-
-Detailed information about shader effects is available on the [Shaders page](/wiki/editor/shaders).

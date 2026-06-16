@@ -77,5 +77,4 @@ Here is a list of viewers. You can use them to open resources that are edited ex
 There are special cases described on separate pages:
 
 - [Phil](/wiki/editor/diorama) - Export levels as GLTF scenes
-- [FEXFX](/wiki/editor/shaders) - PC shaders (`.fxc`)
 - [Scripting](/wiki/editor/scripting) - Level scripting

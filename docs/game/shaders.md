@@ -1,12 +1,8 @@
----
-sort: 15
----
+# FEZ Shaders
 
 ![](/wiki/assets/images/editor/shaders.png)
 
 *Hey, what could possibly go wrong here?*
-
-# Shaders
 
 ```warning
 This guide page covers a fairly complex topic. If you’re not familiar with shaders and are encountering them for the first time, check out [this tutorial](http://rbwhitaker.wikidot.com/hlsl-tutorials).
