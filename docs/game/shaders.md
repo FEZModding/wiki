@@ -1,4 +1,4 @@
-# FEZ Shaders
+# Shaders Overview
 
 ![](/wiki/assets/images/editor/shaders.png)
 
